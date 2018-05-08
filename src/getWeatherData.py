@@ -1,6 +1,6 @@
 import pyowm
-
-owm = pyowm.OWM('686f48c707798f004bf424ed785b2c27')
+import config
+owm = pyowm.OWM(config.weatherAPI)
 #observations = owm.weather_at_place('Bay Lake,US')
 
 reg = owm.city_id_registry()
