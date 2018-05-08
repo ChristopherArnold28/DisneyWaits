@@ -5,7 +5,8 @@ This repository is my attempt at generating a machine learning algorithm
 to predict Disney Wait times. This is already being done by a number of
 websites and is done relatively successfully. My difference is to hopefully
 implement some live weather updating some of the other sites do not
-necessarily take advantage of.
+necessarily take advantage of as well as a few other features that may be
+overlooked.
 
 ## Repository Structure
 
