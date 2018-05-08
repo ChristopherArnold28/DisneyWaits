@@ -9,9 +9,8 @@ necessarily take advantage of.
 
 ## Repository Structure
 
-* SQL
-  This holds all sql necessary to regenerate my database
-* SRC
-  This holds the python necessary to populate the database and perform analysis
+* SQL:
+  This holds all `SQL` necessary to regenerate my database
+* SRC:
+  This holds the `python` necessary to populate the database and perform analysis
   on the data that has been gathered
-  
