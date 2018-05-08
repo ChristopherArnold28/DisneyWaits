@@ -1,3 +1,6 @@
+CREATE DATABASE `DisneyDB` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+
 CREATE TABLE `Park` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` text NOT NULL,
