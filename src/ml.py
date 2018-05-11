@@ -1,9 +1,10 @@
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.cross_validation import cross_val_predict
 import pandas as pd
 import numpy as np
 from datetime import datetime
-
-RideWaits = pd.read_csv("C:/Users/chrisA/Documents/DisneyWaitTimes/DisneyWaits/src/disneyWaitTimes.csv")
-
+import statistics
+RideWaits = pd.read_csv("*****/DisneyWaits/src/disneyWaitTimes.csv")
 
 def transformData(RideWaits):
     RideWaits["RideId"] = pd.Categorical(RideWaits["RideId"]).codes
@@ -12,6 +13,7 @@ def transformData(RideWaits):
     RideWaits["Tier"] = pd.Categorical(RideWaits["Tier"])
     RideWaits["ParkName"] = pd.Categorical(RideWaits["ParkName"])
     RideWaits["IntellectualProp"] = pd.Categorical(RideWaits["IntellectualProp"])
+    RideWaits["SimpleStatus"] = pd.Categorical(RideWaits["SimpleStatus"])
 
     #want to create some more intersting columns:
     #- character experience
@@ -90,13 +92,52 @@ def transformData(RideWaits):
     RideWaits["TimeSinceMidday"] = timeSinceMidDay
     RideWaits = RideWaits[RideWaits["validTime"] == 1]
 
+    RideWaits["inEMH"] = pd.Categorical(RideWaits["inEMH"])
+    RideWaits["EMHDay"] = pd.Categorical(RideWaits["EMHDay"])
+
     #RideWaits["Month"] = RideWaits["Date"].dt.month
     RideWaits["TimeSinceRideOpen"] = (RideWaits["Date"] - RideWaits["OpeningDate"]).dt.days
 
     return RideWaits
 
-
 #print(RideWaits.head())
 
 RideWaits = transformData(RideWaits)
 print(RideWaits.info())
+keyFeatures = ["Name", "Tier", "IntellectualProp", "SimpleStatus", "ParkName", "DayOfWeek", "Weekend", "TimeSinceOpen", "CharacterExperience", "TimeSinceMidday", "inEMH", "EMHDay"]
+
+categoryColumns = RideWaits.select_dtypes(include = ['category']).columns
+
+RideWaits["Name"] = pd.Categorical(RideWaits["Name"]).codes
+
+for col in categoryColumns:
+    RideWaits[col] = pd.Categorical(RideWaits[col]).codes
+
+
+
+rf = RandomForestRegressor(random_state = 1, n_estimators = 100)
+predictions = cross_val_predict(rf, RideWaits[keyFeatures], RideWaits["Wait"], cv = 5)
+
+
+import sklearn.metrics as metrics
+
+rmse = metrics.mean_squared_error(predictions, RideWaits["Wait"])**(1/2)
+print(rmse)
+
+r2 = metrics.r2_score(predictions, RideWaits["Wait"])
+print(r2)
+var = metrics.explained_variance_score(predictions,RideWaits["Wait"])
+print(var)
+from scipy.stats.stats import pearsonr
+pearsoncorr = pearsonr(predictions, RideWaits["Wait"])
+
+perror = abs(predictions - RideWaits["Wait"])/RideWaits["Wait"]
+mperror = statistics.median(perror)
+print(mperror)
+print(pearsoncorr)
+
+import matplotlib.pyplot as plt
+
+
+plt.scatter(RideWaits["Wait"], predictions)
+plt.show()
