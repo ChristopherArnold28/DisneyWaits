@@ -17,11 +17,11 @@ select
     WaitData.SimpleStatus,
     WaitData.RainAccumulation,
     ParkHours.ParkId,
-    ParkHours.Date,
     ParkHours.ParkOpen,
     ParkHours.ParkClose,
     ParkHours.EMHOpen,
-    ParkHours.EMHClose
+    ParkHours.EMHClose,
+    Park.Name as ParkName
 from(
 	select
 		Ride_Waits.RideId,
@@ -42,7 +42,7 @@ from(
 		Ride_Waits
 		join Ride on Ride.Id = Ride_Waits.RideId
 		join Weather on Weather.Date = Ride_Waits.Date and Weather.Time = Ride_Waits.Time) WaitData
-join ParkHours on WaitData.ParkId = ParkHours.ParkId and WaitData.Date = ParkHours.Date;
-
+join ParkHours on WaitData.ParkId = ParkHours.ParkId and WaitData.Date = ParkHours.Date
+join Park on Park.Id = ParkHours.ParkId;
 END$$
 DELIMITER ;

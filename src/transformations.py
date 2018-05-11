@@ -10,7 +10,7 @@ RideWaits["RideId"] = pd.Categorical(RideWaits["RideId"]).codes
 RideWaits["Status"] = pd.Categorical(RideWaits["Status"]).codes
 RideWaits["ParkId"] = pd.Categorical(RideWaits["ParkId"])
 RideWaits["Tier"] = pd.Categorical(RideWaits["Tier"])
-
+RideWaits["ParkName"] = pd.Categorical(RideWaits["ParkName"])
 
 #want to create some more intersting columns:
 #- character experience
