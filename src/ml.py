@@ -1,9 +1,15 @@
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.cross_validation import cross_val_predict
+import sklearn.metrics
+from scipy.stats.stats import pearsonr
 import pandas as pd
 import numpy as np
 from datetime import datetime
 import statistics
+import matplotlib.pyplot as plt
+
+
+
 RideWaits = pd.read_csv("*****/DisneyWaits/src/disneyWaitTimes.csv")
 
 def transformData(RideWaits):
@@ -100,44 +106,33 @@ def transformData(RideWaits):
 
     return RideWaits
 
-#print(RideWaits.head())
 
 RideWaits = transformData(RideWaits)
 print(RideWaits.info())
+
 keyFeatures = ["Name", "Tier", "IntellectualProp", "SimpleStatus", "ParkName", "DayOfWeek", "Weekend", "TimeSinceOpen", "CharacterExperience", "TimeSinceMidday", "inEMH", "EMHDay"]
-
 categoryColumns = RideWaits.select_dtypes(include = ['category']).columns
-
 RideWaits["Name"] = pd.Categorical(RideWaits["Name"]).codes
-
 for col in categoryColumns:
     RideWaits[col] = pd.Categorical(RideWaits[col]).codes
-
-
 
 rf = RandomForestRegressor(random_state = 1, n_estimators = 100)
 predictions = cross_val_predict(rf, RideWaits[keyFeatures], RideWaits["Wait"], cv = 5)
 
-
-import sklearn.metrics as metrics
-
 rmse = metrics.mean_squared_error(predictions, RideWaits["Wait"])**(1/2)
-print(rmse)
-
 r2 = metrics.r2_score(predictions, RideWaits["Wait"])
-print(r2)
 var = metrics.explained_variance_score(predictions,RideWaits["Wait"])
-print(var)
-from scipy.stats.stats import pearsonr
 pearsoncorr = pearsonr(predictions, RideWaits["Wait"])
-
 perror = abs(predictions - RideWaits["Wait"])/RideWaits["Wait"]
 mperror = statistics.median(perror)
-print(mperror)
-print(pearsoncorr)
+error = abs(predictions - RideWaits["Wait"])
+merror = error.mean()
+print(merror)
 
-import matplotlib.pyplot as plt
-
-
+fig, ax = plt.subplots(figsize = (20,20))
 plt.scatter(RideWaits["Wait"], predictions)
+plt.show()
+
+fig,ax = plt.subplots(figsize = (15,15))
+plt.scatter(RideWaits["Wait"], error)
 plt.show()
