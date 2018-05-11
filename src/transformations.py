@@ -91,5 +91,4 @@ RideWaits["TimeSinceMidday"] = timeSinceMidDay
 RideWaits = RideWaits[RideWaits["validTime"] == 1]
 
 RideWaits["Month"] = RideWaits["Date"].dt.month
-RideWaits["Month"].value_counts()
 RideWaits["TimeSinceRideOpen"] = (RideWaits["Date"] - RideWaits["OpeningDate"]).dt.days
