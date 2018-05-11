@@ -16060,6 +16060,186 @@ RideId,Date,Time,Wait,Name,OpeningDate,Tier,Location,IntellectualProp,Status,Tem
 57,2018-05-11,15:15,30,"The Many Adventures of Winnie the Pooh",1999-06-05,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
 60,2018-05-11,15:15,30,"Tomorrowland Speedway",1971-10-01,major_attraction,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
 64,2018-05-11,15:15,10,"Under the Sea ~ Journey of The Little Mermaid",2012-12-06,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+1,2018-05-11,15:30,20,"Astro Orbiter",1995-02-25,minor_attraction,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+3,2018-05-11,15:30,30,"Big Thunder Mountain Railroad",1980-09-23,headliner,Frontierland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+4,2018-05-11,15:30,30,"Buzz Lightyears Space Ranger Spin",1998-10-07,minor_attraction,Tomorrowland,Pixar,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+7,2018-05-11,15:30,15,"Dumbo the Flying Elephant",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+8,2018-05-11,15:30,15,"Enchanted Tales with Belle",2012-12-06,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+13,2018-05-11,15:30,30,"Haunted Mansion",1971-10-01,major_attraction,"Liberty Square",None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+15,2018-05-11,15:30,20,"Its a small world",1971-10-01,major_attraction,Fantasyland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+17,2018-05-11,15:30,30,"Jungle Cruise",1971-10-01,major_attraction,Adventureland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+21,2018-05-11,15:30,10,"Mad Tea Party",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+22,2018-05-11,15:30,20,"Meet Ariel at Her Grotto",2012-12-06,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+25,2018-05-11,15:30,20,"Meet Cinderella and Elena at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+26,2018-05-11,15:30,40,"Meet Cinderella and Rapunzel at Princess Fairytale Hall",2016-11-24,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+27,2018-05-11,15:30,100,"Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+28,2018-05-11,15:30,10,"Meet Daring Disney Pals as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+31,2018-05-11,15:30,10,"Meet Magnifique Disney Friends as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+32,2018-05-11,15:30,15,"Meet Mickey Mouse at Town Square Theater",2011-04-01,minor_attraction,"Magic Kingdom",Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+33,2018-05-11,15:30,35,"Meet Rapunzel and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+34,2018-05-11,15:30,10,"Meet Tinker Bell at Town Square Theater",2014-05-20,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+36,2018-05-11,15:30,5,"Mickeys PhilharMagic",2003-10-08,major_attraction,Fantasyland,Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+38,2018-05-11,15:30,20,"Monsters, Inc. Laugh Floor",2007-04-02,major_attraction,Tomorrowland,Pixar,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+41,2018-05-11,15:30,60,"Peter Pans Flight",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+42,2018-05-11,15:30,25,"Pirates of the Caribbean",1973-12-17,headliner,Adventureland,Pirates,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+44,2018-05-11,15:30,10,"Prince Charming Regal Carrousel",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+47,2018-05-11,15:30,65,"Seven Dwarfs Mine Train",2014-05-28,major_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+49,2018-05-11,15:30,105,"Space Mountain",1975-01-15,super_headliner,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+51,2018-05-11,15:30,85,"Splash Mountain",1992-07-17,super_headliner,Frontierland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+55,2018-05-11,15:30,20,"The Barnstormer",1996-10-01,minor_attraction,Fantasyland,Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+56,2018-05-11,15:30,20,"The Magic Carpets of Aladdin",2001-05-23,minor_attraction,Adventureland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+57,2018-05-11,15:30,30,"The Many Adventures of Winnie the Pooh",1999-06-05,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+60,2018-05-11,15:30,30,"Tomorrowland Speedway",1971-10-01,major_attraction,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+64,2018-05-11,15:30,10,"Under the Sea ~ Journey of The Little Mermaid",2012-12-06,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+1,2018-05-11,15:45,30,"Astro Orbiter",1995-02-25,minor_attraction,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+3,2018-05-11,15:45,40,"Big Thunder Mountain Railroad",1980-09-23,headliner,Frontierland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+4,2018-05-11,15:45,35,"Buzz Lightyears Space Ranger Spin",1998-10-07,minor_attraction,Tomorrowland,Pixar,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+7,2018-05-11,15:45,20,"Dumbo the Flying Elephant",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+8,2018-05-11,15:45,20,"Enchanted Tales with Belle",2012-12-06,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+13,2018-05-11,15:45,25,"Haunted Mansion",1971-10-01,major_attraction,"Liberty Square",None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+15,2018-05-11,15:45,15,"Its a small world",1971-10-01,major_attraction,Fantasyland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+17,2018-05-11,15:45,35,"Jungle Cruise",1971-10-01,major_attraction,Adventureland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+21,2018-05-11,15:45,10,"Mad Tea Party",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+25,2018-05-11,15:45,20,"Meet Cinderella and Elena at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+26,2018-05-11,15:45,40,"Meet Cinderella and Rapunzel at Princess Fairytale Hall",2016-11-24,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+27,2018-05-11,15:45,100,"Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+28,2018-05-11,15:45,10,"Meet Daring Disney Pals as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+31,2018-05-11,15:45,10,"Meet Magnifique Disney Friends as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+32,2018-05-11,15:45,50,"Meet Mickey Mouse at Town Square Theater",2011-04-01,minor_attraction,"Magic Kingdom",Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+33,2018-05-11,15:45,25,"Meet Rapunzel and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+34,2018-05-11,15:45,15,"Meet Tinker Bell at Town Square Theater",2014-05-20,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+36,2018-05-11,15:45,5,"Mickeys PhilharMagic",2003-10-08,major_attraction,Fantasyland,Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+38,2018-05-11,15:45,20,"Monsters, Inc. Laugh Floor",2007-04-02,major_attraction,Tomorrowland,Pixar,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+41,2018-05-11,15:45,50,"Peter Pans Flight",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+42,2018-05-11,15:45,30,"Pirates of the Caribbean",1973-12-17,headliner,Adventureland,Pirates,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+44,2018-05-11,15:45,10,"Prince Charming Regal Carrousel",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+47,2018-05-11,15:45,90,"Seven Dwarfs Mine Train",2014-05-28,major_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+49,2018-05-11,15:45,85,"Space Mountain",1975-01-15,super_headliner,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+51,2018-05-11,15:45,80,"Splash Mountain",1992-07-17,super_headliner,Frontierland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+55,2018-05-11,15:45,20,"The Barnstormer",1996-10-01,minor_attraction,Fantasyland,Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+56,2018-05-11,15:45,15,"The Magic Carpets of Aladdin",2001-05-23,minor_attraction,Adventureland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+57,2018-05-11,15:45,25,"The Many Adventures of Winnie the Pooh",1999-06-05,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+60,2018-05-11,15:45,30,"Tomorrowland Speedway",1971-10-01,major_attraction,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+1,2018-05-11,16:00,30,"Astro Orbiter",1995-02-25,minor_attraction,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+3,2018-05-11,16:00,45,"Big Thunder Mountain Railroad",1980-09-23,headliner,Frontierland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+4,2018-05-11,16:00,40,"Buzz Lightyears Space Ranger Spin",1998-10-07,minor_attraction,Tomorrowland,Pixar,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+7,2018-05-11,16:00,35,"Dumbo the Flying Elephant",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+8,2018-05-11,16:00,35,"Enchanted Tales with Belle",2012-12-06,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+13,2018-05-11,16:00,25,"Haunted Mansion",1971-10-01,major_attraction,"Liberty Square",None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+15,2018-05-11,16:00,20,"Its a small world",1971-10-01,major_attraction,Fantasyland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+17,2018-05-11,16:00,50,"Jungle Cruise",1971-10-01,major_attraction,Adventureland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+21,2018-05-11,16:00,15,"Mad Tea Party",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+22,2018-05-11,16:00,15,"Meet Ariel at Her Grotto",2012-12-06,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+25,2018-05-11,16:00,25,"Meet Cinderella and Elena at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+26,2018-05-11,16:00,40,"Meet Cinderella and Rapunzel at Princess Fairytale Hall",2016-11-24,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+27,2018-05-11,16:00,100,"Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+28,2018-05-11,16:00,20,"Meet Daring Disney Pals as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+31,2018-05-11,16:00,10,"Meet Magnifique Disney Friends as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+32,2018-05-11,16:00,60,"Meet Mickey Mouse at Town Square Theater",2011-04-01,minor_attraction,"Magic Kingdom",Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+33,2018-05-11,16:00,30,"Meet Rapunzel and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+34,2018-05-11,16:00,10,"Meet Tinker Bell at Town Square Theater",2014-05-20,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+36,2018-05-11,16:00,10,"Mickeys PhilharMagic",2003-10-08,major_attraction,Fantasyland,Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+38,2018-05-11,16:00,15,"Monsters, Inc. Laugh Floor",2007-04-02,major_attraction,Tomorrowland,Pixar,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+41,2018-05-11,16:00,60,"Peter Pans Flight",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+42,2018-05-11,16:00,45,"Pirates of the Caribbean",1973-12-17,headliner,Adventureland,Pirates,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+44,2018-05-11,16:00,10,"Prince Charming Regal Carrousel",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+47,2018-05-11,16:00,90,"Seven Dwarfs Mine Train",2014-05-28,major_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+49,2018-05-11,16:00,95,"Space Mountain",1975-01-15,super_headliner,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+51,2018-05-11,16:00,45,"Splash Mountain",1992-07-17,super_headliner,Frontierland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+55,2018-05-11,16:00,30,"The Barnstormer",1996-10-01,minor_attraction,Fantasyland,Fab5,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+56,2018-05-11,16:00,15,"The Magic Carpets of Aladdin",2001-05-23,minor_attraction,Adventureland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+57,2018-05-11,16:00,40,"The Many Adventures of Winnie the Pooh",1999-06-05,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+60,2018-05-11,16:00,30,"Tomorrowland Speedway",1971-10-01,major_attraction,Tomorrowland,None,"clear sky",90.95,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+1,2018-05-11,16:15,20,"Astro Orbiter",1995-02-25,minor_attraction,Tomorrowland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+3,2018-05-11,16:15,40,"Big Thunder Mountain Railroad",1980-09-23,headliner,Frontierland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+4,2018-05-11,16:15,45,"Buzz Lightyears Space Ranger Spin",1998-10-07,minor_attraction,Tomorrowland,Pixar,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+7,2018-05-11,16:15,60,"Dumbo the Flying Elephant",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+8,2018-05-11,16:15,30,"Enchanted Tales with Belle",2012-12-06,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+13,2018-05-11,16:15,20,"Haunted Mansion",1971-10-01,major_attraction,"Liberty Square",None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+15,2018-05-11,16:15,20,"Its a small world",1971-10-01,major_attraction,Fantasyland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+17,2018-05-11,16:15,40,"Jungle Cruise",1971-10-01,major_attraction,Adventureland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+21,2018-05-11,16:15,20,"Mad Tea Party",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+22,2018-05-11,16:15,20,"Meet Ariel at Her Grotto",2012-12-06,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+25,2018-05-11,16:15,35,"Meet Cinderella and Elena at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+26,2018-05-11,16:15,40,"Meet Cinderella and Rapunzel at Princess Fairytale Hall",2016-11-24,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+27,2018-05-11,16:15,100,"Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+28,2018-05-11,16:15,25,"Meet Daring Disney Pals as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+31,2018-05-11,16:15,15,"Meet Magnifique Disney Friends as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+32,2018-05-11,16:15,60,"Meet Mickey Mouse at Town Square Theater",2011-04-01,minor_attraction,"Magic Kingdom",Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+33,2018-05-11,16:15,30,"Meet Rapunzel and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+34,2018-05-11,16:15,25,"Meet Tinker Bell at Town Square Theater",2014-05-20,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+36,2018-05-11,16:15,10,"Mickeys PhilharMagic",2003-10-08,major_attraction,Fantasyland,Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+38,2018-05-11,16:15,20,"Monsters, Inc. Laugh Floor",2007-04-02,major_attraction,Tomorrowland,Pixar,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+41,2018-05-11,16:15,60,"Peter Pans Flight",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+42,2018-05-11,16:15,30,"Pirates of the Caribbean",1973-12-17,headliner,Adventureland,Pirates,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+44,2018-05-11,16:15,10,"Prince Charming Regal Carrousel",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+47,2018-05-11,16:15,90,"Seven Dwarfs Mine Train",2014-05-28,major_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+49,2018-05-11,16:15,85,"Space Mountain",1975-01-15,super_headliner,Tomorrowland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+51,2018-05-11,16:15,40,"Splash Mountain",1992-07-17,super_headliner,Frontierland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+55,2018-05-11,16:15,30,"The Barnstormer",1996-10-01,minor_attraction,Fantasyland,Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+56,2018-05-11,16:15,15,"The Magic Carpets of Aladdin",2001-05-23,minor_attraction,Adventureland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+57,2018-05-11,16:15,30,"The Many Adventures of Winnie the Pooh",1999-06-05,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+60,2018-05-11,16:15,30,"Tomorrowland Speedway",1971-10-01,major_attraction,Tomorrowland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+1,2018-05-11,16:30,20,"Astro Orbiter",1995-02-25,minor_attraction,Tomorrowland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+3,2018-05-11,16:30,30,"Big Thunder Mountain Railroad",1980-09-23,headliner,Frontierland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+4,2018-05-11,16:30,35,"Buzz Lightyears Space Ranger Spin",1998-10-07,minor_attraction,Tomorrowland,Pixar,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+7,2018-05-11,16:30,45,"Dumbo the Flying Elephant",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+8,2018-05-11,16:30,35,"Enchanted Tales with Belle",2012-12-06,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+13,2018-05-11,16:30,25,"Haunted Mansion",1971-10-01,major_attraction,"Liberty Square",None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+15,2018-05-11,16:30,25,"Its a small world",1971-10-01,major_attraction,Fantasyland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+17,2018-05-11,16:30,40,"Jungle Cruise",1971-10-01,major_attraction,Adventureland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+21,2018-05-11,16:30,25,"Mad Tea Party",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+22,2018-05-11,16:30,25,"Meet Ariel at Her Grotto",2012-12-06,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+25,2018-05-11,16:30,35,"Meet Cinderella and Elena at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+26,2018-05-11,16:30,40,"Meet Cinderella and Rapunzel at Princess Fairytale Hall",2016-11-24,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+27,2018-05-11,16:30,100,"Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+28,2018-05-11,16:30,20,"Meet Daring Disney Pals as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+31,2018-05-11,16:30,15,"Meet Magnifique Disney Friends as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+32,2018-05-11,16:30,60,"Meet Mickey Mouse at Town Square Theater",2011-04-01,minor_attraction,"Magic Kingdom",Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+33,2018-05-11,16:30,40,"Meet Rapunzel and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+34,2018-05-11,16:30,25,"Meet Tinker Bell at Town Square Theater",2014-05-20,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+36,2018-05-11,16:30,10,"Mickeys PhilharMagic",2003-10-08,major_attraction,Fantasyland,Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+38,2018-05-11,16:30,25,"Monsters, Inc. Laugh Floor",2007-04-02,major_attraction,Tomorrowland,Pixar,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+41,2018-05-11,16:30,60,"Peter Pans Flight",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+42,2018-05-11,16:30,25,"Pirates of the Caribbean",1973-12-17,headliner,Adventureland,Pirates,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+44,2018-05-11,16:30,10,"Prince Charming Regal Carrousel",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+47,2018-05-11,16:30,75,"Seven Dwarfs Mine Train",2014-05-28,major_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+49,2018-05-11,16:30,85,"Space Mountain",1975-01-15,super_headliner,Tomorrowland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+51,2018-05-11,16:30,40,"Splash Mountain",1992-07-17,super_headliner,Frontierland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+55,2018-05-11,16:30,25,"The Barnstormer",1996-10-01,minor_attraction,Fantasyland,Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+56,2018-05-11,16:30,15,"The Magic Carpets of Aladdin",2001-05-23,minor_attraction,Adventureland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+57,2018-05-11,16:30,40,"The Many Adventures of Winnie the Pooh",1999-06-05,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+60,2018-05-11,16:30,20,"Tomorrowland Speedway",1971-10-01,major_attraction,Tomorrowland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+1,2018-05-11,16:45,20,"Astro Orbiter",1995-02-25,minor_attraction,Tomorrowland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+3,2018-05-11,16:45,30,"Big Thunder Mountain Railroad",1980-09-23,headliner,Frontierland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+4,2018-05-11,16:45,30,"Buzz Lightyears Space Ranger Spin",1998-10-07,minor_attraction,Tomorrowland,Pixar,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+7,2018-05-11,16:45,25,"Dumbo the Flying Elephant",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+8,2018-05-11,16:45,30,"Enchanted Tales with Belle",2012-12-06,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+13,2018-05-11,16:45,30,"Haunted Mansion",1971-10-01,major_attraction,"Liberty Square",None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+15,2018-05-11,16:45,25,"Its a small world",1971-10-01,major_attraction,Fantasyland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+17,2018-05-11,16:45,50,"Jungle Cruise",1971-10-01,major_attraction,Adventureland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+21,2018-05-11,16:45,25,"Mad Tea Party",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+22,2018-05-11,16:45,35,"Meet Ariel at Her Grotto",2012-12-06,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+25,2018-05-11,16:45,50,"Meet Cinderella and Elena at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+26,2018-05-11,16:45,40,"Meet Cinderella and Rapunzel at Princess Fairytale Hall",2016-11-24,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+27,2018-05-11,16:45,100,"Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+28,2018-05-11,16:45,15,"Meet Daring Disney Pals as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+31,2018-05-11,16:45,20,"Meet Magnifique Disney Friends as Circus Stars at Petes Silly Sideshow",2012-10-04,minor_attraction,"Magic Kingdom",Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+32,2018-05-11,16:45,50,"Meet Mickey Mouse at Town Square Theater",2011-04-01,minor_attraction,"Magic Kingdom",Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+33,2018-05-11,16:45,50,"Meet Rapunzel and a Visiting Princess at Princess Fairytale Hall",2016-11-24,minor_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+34,2018-05-11,16:45,30,"Meet Tinker Bell at Town Square Theater",2014-05-20,minor_attraction,"Magic Kingdom",AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+36,2018-05-11,16:45,10,"Mickeys PhilharMagic",2003-10-08,major_attraction,Fantasyland,Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+38,2018-05-11,16:45,30,"Monsters, Inc. Laugh Floor",2007-04-02,major_attraction,Tomorrowland,Pixar,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+41,2018-05-11,16:45,60,"Peter Pans Flight",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+42,2018-05-11,16:45,25,"Pirates of the Caribbean",1973-12-17,headliner,Adventureland,Pirates,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+44,2018-05-11,16:45,10,"Prince Charming Regal Carrousel",1971-10-01,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+47,2018-05-11,16:45,80,"Seven Dwarfs Mine Train",2014-05-28,major_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+49,2018-05-11,16:45,90,"Space Mountain",1975-01-15,super_headliner,Tomorrowland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+51,2018-05-11,16:45,65,"Splash Mountain",1992-07-17,super_headliner,Frontierland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+55,2018-05-11,16:45,15,"The Barnstormer",1996-10-01,minor_attraction,Fantasyland,Fab5,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+56,2018-05-11,16:45,15,"The Magic Carpets of Aladdin",2001-05-23,minor_attraction,Adventureland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+57,2018-05-11,16:45,35,"The Many Adventures of Winnie the Pooh",1999-06-05,minor_attraction,Fantasyland,AnimatedClassic,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
+60,2018-05-11,16:45,20,"Tomorrowland Speedway",1971-10-01,major_attraction,Tomorrowland,None,"clear sky",91.17,1,Clear,0,1,"9:00 AM","11:00 PM","8:00 AM","9:00 AM","Magic Kingdom"
 11,2018-05-11,09:15,15,"Frozen Ever After",2016-06-21,major_attraction,,AnimatedClassic,"clear sky",74.53,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
 16,2018-05-11,09:15,5,"Journey Into Imagination With Figment",2002-06-01,major_attraction,"Future World",None,"clear sky",74.53,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
 20,2018-05-11,09:15,5,"Living with the Land",1982-10-01,major_attraction,"Future World",None,"clear sky",74.53,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
@@ -16336,6 +16516,78 @@ RideId,Date,Time,Wait,Name,OpeningDate,Tier,Location,IntellectualProp,Status,Tem
 54,2018-05-11,15:15,90,"Test Track Presented by Chevrolet",1999-03-16,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
 58,2018-05-11,15:15,10,"The Seas with Nemo & Friends",2006-11-27,major_attraction,"Future World",Pixar,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
 63,2018-05-11,15:15,10,"Turtle Talk With Crush",2004-11-16,minor_attraction,"Future World",Pixar,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+11,2018-05-11,15:30,50,"Frozen Ever After",2016-06-21,major_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+12,2018-05-11,15:30,10,"Gran Fiesta Tour Starring The Three Caballeros",2007-04-02,minor_attraction,"World Showcase",Fab5,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+16,2018-05-11,15:30,15,"Journey Into Imagination With Figment",2002-06-01,major_attraction,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+20,2018-05-11,15:30,25,"Living with the Land",1982-10-01,major_attraction,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+29,2018-05-11,15:30,20,"Meet Disney Pals at the Epcot Character Spot",2007-05-20,diversion,Epcot,Fab5,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+37,2018-05-11,15:30,15,"Mission: SPACE",2003-10-01,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+46,2018-05-11,15:30,40,"Royal Sommerhus",2016-06-21,minor_attraction,,None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+48,2018-05-11,15:30,40,Soarin,2005-05-05,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+50,2018-05-11,15:30,15,"Spaceship Earth",1982-10-01,headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+54,2018-05-11,15:30,90,"Test Track Presented by Chevrolet",1999-03-16,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+58,2018-05-11,15:30,10,"The Seas with Nemo & Friends",2006-11-27,major_attraction,"Future World",Pixar,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+63,2018-05-11,15:30,10,"Turtle Talk With Crush",2004-11-16,minor_attraction,"Future World",Pixar,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+11,2018-05-11,15:45,50,"Frozen Ever After",2016-06-21,major_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+12,2018-05-11,15:45,10,"Gran Fiesta Tour Starring The Three Caballeros",2007-04-02,minor_attraction,"World Showcase",Fab5,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+16,2018-05-11,15:45,15,"Journey Into Imagination With Figment",2002-06-01,major_attraction,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+20,2018-05-11,15:45,25,"Living with the Land",1982-10-01,major_attraction,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+29,2018-05-11,15:45,35,"Meet Disney Pals at the Epcot Character Spot",2007-05-20,diversion,Epcot,Fab5,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+37,2018-05-11,15:45,20,"Mission: SPACE",2003-10-01,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+46,2018-05-11,15:45,35,"Royal Sommerhus",2016-06-21,minor_attraction,,None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+48,2018-05-11,15:45,50,Soarin,2005-05-05,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+50,2018-05-11,15:45,15,"Spaceship Earth",1982-10-01,headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+54,2018-05-11,15:45,75,"Test Track Presented by Chevrolet",1999-03-16,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+58,2018-05-11,15:45,15,"The Seas with Nemo & Friends",2006-11-27,major_attraction,"Future World",Pixar,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+63,2018-05-11,15:45,10,"Turtle Talk With Crush",2004-11-16,minor_attraction,"Future World",Pixar,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+11,2018-05-11,16:00,50,"Frozen Ever After",2016-06-21,major_attraction,,AnimatedClassic,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+12,2018-05-11,16:00,10,"Gran Fiesta Tour Starring The Three Caballeros",2007-04-02,minor_attraction,"World Showcase",Fab5,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+16,2018-05-11,16:00,20,"Journey Into Imagination With Figment",2002-06-01,major_attraction,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+20,2018-05-11,16:00,20,"Living with the Land",1982-10-01,major_attraction,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+29,2018-05-11,16:00,15,"Meet Disney Pals at the Epcot Character Spot",2007-05-20,diversion,Epcot,Fab5,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+37,2018-05-11,16:00,15,"Mission: SPACE",2003-10-01,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+46,2018-05-11,16:00,20,"Royal Sommerhus",2016-06-21,minor_attraction,,None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+48,2018-05-11,16:00,50,Soarin,2005-05-05,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+50,2018-05-11,16:00,15,"Spaceship Earth",1982-10-01,headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+54,2018-05-11,16:00,75,"Test Track Presented by Chevrolet",1999-03-16,super_headliner,"Future World",None,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+58,2018-05-11,16:00,10,"The Seas with Nemo & Friends",2006-11-27,major_attraction,"Future World",Pixar,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+63,2018-05-11,16:00,5,"Turtle Talk With Crush",2004-11-16,minor_attraction,"Future World",Pixar,"clear sky",90.95,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+11,2018-05-11,16:15,55,"Frozen Ever After",2016-06-21,major_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+12,2018-05-11,16:15,10,"Gran Fiesta Tour Starring The Three Caballeros",2007-04-02,minor_attraction,"World Showcase",Fab5,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+16,2018-05-11,16:15,20,"Journey Into Imagination With Figment",2002-06-01,major_attraction,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+20,2018-05-11,16:15,25,"Living with the Land",1982-10-01,major_attraction,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+29,2018-05-11,16:15,25,"Meet Disney Pals at the Epcot Character Spot",2007-05-20,diversion,Epcot,Fab5,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+37,2018-05-11,16:15,20,"Mission: SPACE",2003-10-01,super_headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+46,2018-05-11,16:15,20,"Royal Sommerhus",2016-06-21,minor_attraction,,None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+48,2018-05-11,16:15,50,Soarin,2005-05-05,super_headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+50,2018-05-11,16:15,20,"Spaceship Earth",1982-10-01,headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+54,2018-05-11,16:15,60,"Test Track Presented by Chevrolet",1999-03-16,super_headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+58,2018-05-11,16:15,20,"The Seas with Nemo & Friends",2006-11-27,major_attraction,"Future World",Pixar,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+63,2018-05-11,16:15,10,"Turtle Talk With Crush",2004-11-16,minor_attraction,"Future World",Pixar,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+11,2018-05-11,16:30,60,"Frozen Ever After",2016-06-21,major_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+12,2018-05-11,16:30,15,"Gran Fiesta Tour Starring The Three Caballeros",2007-04-02,minor_attraction,"World Showcase",Fab5,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+16,2018-05-11,16:30,10,"Journey Into Imagination With Figment",2002-06-01,major_attraction,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+20,2018-05-11,16:30,15,"Living with the Land",1982-10-01,major_attraction,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+29,2018-05-11,16:30,25,"Meet Disney Pals at the Epcot Character Spot",2007-05-20,diversion,Epcot,Fab5,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+37,2018-05-11,16:30,35,"Mission: SPACE",2003-10-01,super_headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+46,2018-05-11,16:30,20,"Royal Sommerhus",2016-06-21,minor_attraction,,None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+48,2018-05-11,16:30,40,Soarin,2005-05-05,super_headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+50,2018-05-11,16:30,25,"Spaceship Earth",1982-10-01,headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+54,2018-05-11,16:30,80,"Test Track Presented by Chevrolet",1999-03-16,super_headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+58,2018-05-11,16:30,15,"The Seas with Nemo & Friends",2006-11-27,major_attraction,"Future World",Pixar,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+63,2018-05-11,16:30,10,"Turtle Talk With Crush",2004-11-16,minor_attraction,"Future World",Pixar,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+11,2018-05-11,16:45,60,"Frozen Ever After",2016-06-21,major_attraction,,AnimatedClassic,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+12,2018-05-11,16:45,15,"Gran Fiesta Tour Starring The Three Caballeros",2007-04-02,minor_attraction,"World Showcase",Fab5,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+16,2018-05-11,16:45,15,"Journey Into Imagination With Figment",2002-06-01,major_attraction,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+20,2018-05-11,16:45,15,"Living with the Land",1982-10-01,major_attraction,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+29,2018-05-11,16:45,35,"Meet Disney Pals at the Epcot Character Spot",2007-05-20,diversion,Epcot,Fab5,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+37,2018-05-11,16:45,30,"Mission: SPACE",2003-10-01,super_headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+46,2018-05-11,16:45,30,"Royal Sommerhus",2016-06-21,minor_attraction,,None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+48,2018-05-11,16:45,35,Soarin,2005-05-05,super_headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+50,2018-05-11,16:45,15,"Spaceship Earth",1982-10-01,headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+54,2018-05-11,16:45,70,"Test Track Presented by Chevrolet",1999-03-16,super_headliner,"Future World",None,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+58,2018-05-11,16:45,10,"The Seas with Nemo & Friends",2006-11-27,major_attraction,"Future World",Pixar,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
+63,2018-05-11,16:45,10,"Turtle Talk With Crush",2004-11-16,minor_attraction,"Future World",Pixar,"clear sky",91.17,1,Clear,0,2,"9:00 AM","9:00 PM",None,None,EpCot
 5,2018-05-11,09:15,10,"Celebrity Spotlight",2017-01-01,diversion,,None,"clear sky",74.53,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
 9,2018-05-11,09:15,5,"Encounter Kylo Ren at Star Wars Launch Bay",2016-02-07,diversion,,StarWars,"clear sky",74.53,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
 23,2018-05-11,09:15,5,"Meet BB-8 at Star Wars Launch Bay",2017-04-14,diversion,,StarWars,"clear sky",74.53,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
@@ -16527,6 +16779,53 @@ RideId,Date,Time,Wait,Name,OpeningDate,Tier,Location,IntellectualProp,Status,Tem
 45,2018-05-11,15:15,45,"Rock n Roller Coaster Starring Aerosmith",1999-07-29,headliner,"Sunset Boulevard",None,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
 52,2018-05-11,15:15,25,"Star Tours - The Adventures Continue",1989-12-15,headliner,"Echo Lake",StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
 59,2018-05-11,15:15,40,"The Twilight Zone Tower of Terror",1994-07-22,super_headliner,"Sunset Boulevard",None,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+5,2018-05-11,15:30,25,"Celebrity Spotlight",2017-01-01,diversion,,None,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+9,2018-05-11,15:30,10,"Encounter Kylo Ren at Star Wars Launch Bay",2016-02-07,diversion,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+23,2018-05-11,15:30,20,"Meet BB-8 at Star Wars Launch Bay",2017-04-14,diversion,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+24,2018-05-11,15:30,15,"Meet Chewbacca at Star Wars Launch Bay",2015-12-01,diversion,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+35,2018-05-11,15:30,30,"Mickey and Minnie Starring in Red Carpet Dreams",2016-05-08,diversion,,Fab5,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+5,2018-05-11,15:45,10,"Celebrity Spotlight",2017-01-01,diversion,,None,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+9,2018-05-11,15:45,15,"Encounter Kylo Ren at Star Wars Launch Bay",2016-02-07,diversion,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+23,2018-05-11,15:45,15,"Meet BB-8 at Star Wars Launch Bay",2017-04-14,diversion,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+24,2018-05-11,15:45,10,"Meet Chewbacca at Star Wars Launch Bay",2015-12-01,diversion,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+35,2018-05-11,15:45,25,"Mickey and Minnie Starring in Red Carpet Dreams",2016-05-08,diversion,,Fab5,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+39,2018-05-11,15:45,15,"Muppet*Vision 3D",1991-05-16,major_attraction,"Streets of America",Muppets,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+45,2018-05-11,15:45,45,"Rock n Roller Coaster Starring Aerosmith",1999-07-29,headliner,"Sunset Boulevard",None,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+52,2018-05-11,15:45,10,"Star Tours - The Adventures Continue",1989-12-15,headliner,"Echo Lake",StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+53,2018-05-11,15:45,10,"Star Wars Launch Bay Theater",2015-12-01,minor_attraction,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+59,2018-05-11,15:45,95,"The Twilight Zone Tower of Terror",1994-07-22,super_headliner,"Sunset Boulevard",None,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+61,2018-05-11,15:45,75,"Toy Story Midway Mania!",2008-05-31,headliner,"Pixar Place",Pixar,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+5,2018-05-11,16:00,10,"Celebrity Spotlight",2017-01-01,diversion,,None,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+9,2018-05-11,16:00,15,"Encounter Kylo Ren at Star Wars Launch Bay",2016-02-07,diversion,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+23,2018-05-11,16:00,15,"Meet BB-8 at Star Wars Launch Bay",2017-04-14,diversion,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+24,2018-05-11,16:00,5,"Meet Chewbacca at Star Wars Launch Bay",2015-12-01,diversion,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+35,2018-05-11,16:00,30,"Mickey and Minnie Starring in Red Carpet Dreams",2016-05-08,diversion,,Fab5,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+39,2018-05-11,16:00,10,"Muppet*Vision 3D",1991-05-16,major_attraction,"Streets of America",Muppets,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+45,2018-05-11,16:00,75,"Rock n Roller Coaster Starring Aerosmith",1999-07-29,headliner,"Sunset Boulevard",None,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+52,2018-05-11,16:00,15,"Star Tours - The Adventures Continue",1989-12-15,headliner,"Echo Lake",StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+53,2018-05-11,16:00,10,"Star Wars Launch Bay Theater",2015-12-01,minor_attraction,,StarWars,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+59,2018-05-11,16:00,70,"The Twilight Zone Tower of Terror",1994-07-22,super_headliner,"Sunset Boulevard",None,"clear sky",90.95,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+5,2018-05-11,16:15,10,"Celebrity Spotlight",2017-01-01,diversion,,None,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+9,2018-05-11,16:15,25,"Encounter Kylo Ren at Star Wars Launch Bay",2016-02-07,diversion,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+23,2018-05-11,16:15,20,"Meet BB-8 at Star Wars Launch Bay",2017-04-14,diversion,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+24,2018-05-11,16:15,5,"Meet Chewbacca at Star Wars Launch Bay",2015-12-01,diversion,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+35,2018-05-11,16:15,45,"Mickey and Minnie Starring in Red Carpet Dreams",2016-05-08,diversion,,Fab5,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+39,2018-05-11,16:15,10,"Muppet*Vision 3D",1991-05-16,major_attraction,"Streets of America",Muppets,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+45,2018-05-11,16:15,75,"Rock n Roller Coaster Starring Aerosmith",1999-07-29,headliner,"Sunset Boulevard",None,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+52,2018-05-11,16:15,10,"Star Tours - The Adventures Continue",1989-12-15,headliner,"Echo Lake",StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+53,2018-05-11,16:15,10,"Star Wars Launch Bay Theater",2015-12-01,minor_attraction,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+59,2018-05-11,16:15,75,"The Twilight Zone Tower of Terror",1994-07-22,super_headliner,"Sunset Boulevard",None,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+61,2018-05-11,16:15,50,"Toy Story Midway Mania!",2008-05-31,headliner,"Pixar Place",Pixar,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+5,2018-05-11,16:30,15,"Celebrity Spotlight",2017-01-01,diversion,,None,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+9,2018-05-11,16:30,15,"Encounter Kylo Ren at Star Wars Launch Bay",2016-02-07,diversion,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+23,2018-05-11,16:30,20,"Meet BB-8 at Star Wars Launch Bay",2017-04-14,diversion,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+24,2018-05-11,16:30,10,"Meet Chewbacca at Star Wars Launch Bay",2015-12-01,diversion,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+35,2018-05-11,16:30,45,"Mickey and Minnie Starring in Red Carpet Dreams",2016-05-08,diversion,,Fab5,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+5,2018-05-11,16:45,20,"Celebrity Spotlight",2017-01-01,diversion,,None,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+9,2018-05-11,16:45,15,"Encounter Kylo Ren at Star Wars Launch Bay",2016-02-07,diversion,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+23,2018-05-11,16:45,15,"Meet BB-8 at Star Wars Launch Bay",2017-04-14,diversion,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+24,2018-05-11,16:45,15,"Meet Chewbacca at Star Wars Launch Bay",2015-12-01,diversion,,StarWars,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
+35,2018-05-11,16:45,45,"Mickey and Minnie Starring in Red Carpet Dreams",2016-05-08,diversion,,Fab5,"clear sky",91.17,1,Clear,0,3,"9:00 AM","9:30 PM",None,None,"Hollywood Studios"
 2,2018-05-11,09:15,80,"Avatar Flight of Passage",2017-05-27,super_headliner,Pandora,Avatar,"clear sky",74.53,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
 6,2018-05-11,09:15,5,DINOSAUR,1998-04-22,super_headliner,"DinoLand U.S.A.",Dinosaur,"clear sky",74.53,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
 10,2018-05-11,09:15,5,"Expedition Everest",2006-04-07,super_headliner,Asia,None,"clear sky",74.53,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
@@ -16736,3 +17035,55 @@ RideId,Date,Time,Wait,Name,OpeningDate,Tier,Location,IntellectualProp,Status,Tem
 40,2018-05-11,15:15,90,"Navi River Journey",2017-05-27,headliner,Pandora,Avatar,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
 43,2018-05-11,15:15,30,"Primeval Whirl",2002-04-18,minor_attraction,"DinoLand U.S.A.",None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
 62,2018-05-11,15:15,10,"TriceraTop Spin",2002-03-31,minor_attraction,"DinoLand U.S.A.",None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+6,2018-05-11,15:30,30,DINOSAUR,1998-04-22,super_headliner,"DinoLand U.S.A.",Dinosaur,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+14,2018-05-11,15:30,15,"Its Tough to be a Bug!",1998-04-22,major_attraction,"Discovery Island",Pixar,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+18,2018-05-11,15:30,60,"Kali River Rapids",1999-02-15,headliner,Asia,None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+19,2018-05-11,15:30,55,"Kilimanjaro Safaris",1998-04-22,super_headliner,Africa,None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+30,2018-05-11,15:30,35,"Meet Favorite Disney Pals at Adventurers Outpost",2013-05-15,minor_attraction,"Animal Kingdom",Fab5,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+43,2018-05-11,15:30,35,"Primeval Whirl",2002-04-18,minor_attraction,"DinoLand U.S.A.",None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+62,2018-05-11,15:30,10,"TriceraTop Spin",2002-03-31,minor_attraction,"DinoLand U.S.A.",None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+2,2018-05-11,15:45,120,"Avatar Flight of Passage",2017-05-27,super_headliner,Pandora,Avatar,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+6,2018-05-11,15:45,35,DINOSAUR,1998-04-22,super_headliner,"DinoLand U.S.A.",Dinosaur,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+14,2018-05-11,15:45,15,"Its Tough to be a Bug!",1998-04-22,major_attraction,"Discovery Island",Pixar,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+18,2018-05-11,15:45,75,"Kali River Rapids",1999-02-15,headliner,Asia,None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+19,2018-05-11,15:45,55,"Kilimanjaro Safaris",1998-04-22,super_headliner,Africa,None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+30,2018-05-11,15:45,20,"Meet Favorite Disney Pals at Adventurers Outpost",2013-05-15,minor_attraction,"Animal Kingdom",Fab5,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+40,2018-05-11,15:45,95,"Navi River Journey",2017-05-27,headliner,Pandora,Avatar,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+43,2018-05-11,15:45,35,"Primeval Whirl",2002-04-18,minor_attraction,"DinoLand U.S.A.",None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+62,2018-05-11,15:45,10,"TriceraTop Spin",2002-03-31,minor_attraction,"DinoLand U.S.A.",None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+2,2018-05-11,16:00,105,"Avatar Flight of Passage",2017-05-27,super_headliner,Pandora,Avatar,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+6,2018-05-11,16:00,45,DINOSAUR,1998-04-22,super_headliner,"DinoLand U.S.A.",Dinosaur,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+10,2018-05-11,16:00,110,"Expedition Everest",2006-04-07,super_headliner,Asia,None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+14,2018-05-11,16:00,20,"Its Tough to be a Bug!",1998-04-22,major_attraction,"Discovery Island",Pixar,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+18,2018-05-11,16:00,75,"Kali River Rapids",1999-02-15,headliner,Asia,None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+19,2018-05-11,16:00,65,"Kilimanjaro Safaris",1998-04-22,super_headliner,Africa,None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+30,2018-05-11,16:00,20,"Meet Favorite Disney Pals at Adventurers Outpost",2013-05-15,minor_attraction,"Animal Kingdom",Fab5,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+40,2018-05-11,16:00,95,"Navi River Journey",2017-05-27,headliner,Pandora,Avatar,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+43,2018-05-11,16:00,20,"Primeval Whirl",2002-04-18,minor_attraction,"DinoLand U.S.A.",None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+62,2018-05-11,16:00,10,"TriceraTop Spin",2002-03-31,minor_attraction,"DinoLand U.S.A.",None,"clear sky",90.95,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+2,2018-05-11,16:15,105,"Avatar Flight of Passage",2017-05-27,super_headliner,Pandora,Avatar,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+6,2018-05-11,16:15,40,DINOSAUR,1998-04-22,super_headliner,"DinoLand U.S.A.",Dinosaur,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+10,2018-05-11,16:15,110,"Expedition Everest",2006-04-07,super_headliner,Asia,None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+14,2018-05-11,16:15,10,"Its Tough to be a Bug!",1998-04-22,major_attraction,"Discovery Island",Pixar,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+18,2018-05-11,16:15,75,"Kali River Rapids",1999-02-15,headliner,Asia,None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+19,2018-05-11,16:15,65,"Kilimanjaro Safaris",1998-04-22,super_headliner,Africa,None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+30,2018-05-11,16:15,30,"Meet Favorite Disney Pals at Adventurers Outpost",2013-05-15,minor_attraction,"Animal Kingdom",Fab5,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+40,2018-05-11,16:15,95,"Navi River Journey",2017-05-27,headliner,Pandora,Avatar,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+43,2018-05-11,16:15,20,"Primeval Whirl",2002-04-18,minor_attraction,"DinoLand U.S.A.",None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+62,2018-05-11,16:15,10,"TriceraTop Spin",2002-03-31,minor_attraction,"DinoLand U.S.A.",None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+2,2018-05-11,16:30,90,"Avatar Flight of Passage",2017-05-27,super_headliner,Pandora,Avatar,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+6,2018-05-11,16:30,55,DINOSAUR,1998-04-22,super_headliner,"DinoLand U.S.A.",Dinosaur,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+14,2018-05-11,16:30,10,"Its Tough to be a Bug!",1998-04-22,major_attraction,"Discovery Island",Pixar,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+18,2018-05-11,16:30,80,"Kali River Rapids",1999-02-15,headliner,Asia,None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+19,2018-05-11,16:30,65,"Kilimanjaro Safaris",1998-04-22,super_headliner,Africa,None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+30,2018-05-11,16:30,40,"Meet Favorite Disney Pals at Adventurers Outpost",2013-05-15,minor_attraction,"Animal Kingdom",Fab5,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+40,2018-05-11,16:30,95,"Navi River Journey",2017-05-27,headliner,Pandora,Avatar,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+43,2018-05-11,16:30,20,"Primeval Whirl",2002-04-18,minor_attraction,"DinoLand U.S.A.",None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+62,2018-05-11,16:30,10,"TriceraTop Spin",2002-03-31,minor_attraction,"DinoLand U.S.A.",None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+6,2018-05-11,16:45,60,DINOSAUR,1998-04-22,super_headliner,"DinoLand U.S.A.",Dinosaur,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+14,2018-05-11,16:45,10,"Its Tough to be a Bug!",1998-04-22,major_attraction,"Discovery Island",Pixar,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+18,2018-05-11,16:45,80,"Kali River Rapids",1999-02-15,headliner,Asia,None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+19,2018-05-11,16:45,65,"Kilimanjaro Safaris",1998-04-22,super_headliner,Africa,None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+30,2018-05-11,16:45,50,"Meet Favorite Disney Pals at Adventurers Outpost",2013-05-15,minor_attraction,"Animal Kingdom",Fab5,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+43,2018-05-11,16:45,25,"Primeval Whirl",2002-04-18,minor_attraction,"DinoLand U.S.A.",None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
+62,2018-05-11,16:45,10,"TriceraTop Spin",2002-03-31,minor_attraction,"DinoLand U.S.A.",None,"clear sky",91.17,1,Clear,0,4,"9:00 AM","10:00 PM",None,None,"Animal Kingdom"
