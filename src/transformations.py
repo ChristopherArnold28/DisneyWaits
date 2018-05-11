@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-RideWaits = pd.read_csv("C:/Users/chrisA/Documents/DisneyWaitTimes/DisneyWaits/src/disneyWaitTimes.csv")
+RideWaits = pd.read_csv("****/DisneyWaits/src/disneyWaitTimes.csv")
 
 #print(RideWaits.head())
 
@@ -11,12 +11,11 @@ RideWaits["Status"] = pd.Categorical(RideWaits["Status"]).codes
 RideWaits["ParkId"] = pd.Categorical(RideWaits["ParkId"])
 RideWaits["Tier"] = pd.Categorical(RideWaits["Tier"])
 RideWaits["ParkName"] = pd.Categorical(RideWaits["ParkName"])
+RideWaits["IntellectualProp"] = pd.Categorical(RideWaits["IntellectualProp"])
 
 #want to create some more intersting columns:
 #- character experience
-#- involves a princess
-#- age of ride
-#- hours until park close
+#- involves a princess/IP involved
 #- is it close to a major event?(Anniversary/Christmas/Thanksgiving/Halloween)
 
 #print(RideWaits["ParkOpen"].value_counts())
@@ -33,12 +32,14 @@ RideWaits["EMHOpen"] = pd.to_datetime(RideWaits["EMHOpen"], format = '%I:%M %p',
 RideWaits["EMHClose"] = pd.to_datetime(RideWaits["EMHClose"], format = '%I:%M %p', errors = 'coerce').dt.strftime('%H:%M')
 RideWaits["EMHOpen"] = pd.to_datetime(RideWaits["EMHOpen"], format = '%H:%M', errors = 'coerce').dt.time
 RideWaits["EMHClose"] = pd.to_datetime(RideWaits["EMHClose"], format = '%H:%M', errors = 'coerce').dt.time
-RideWaits["Weekend"] = [1 if x == 0 or x == 1 or x ==2 or x==3 or x==4 else 0 for x in RideWaits["DayOfWeek"]]
+RideWaits["Weekend"] = [0 if x == 0 or x == 1 or x ==2 or x==3 or x==4 else 1 for x in RideWaits["DayOfWeek"]]
 RideWaits["Weekend"].value_counts()
+RideWaits["CharacterExperience"] = [1 if "Meet" in x else 0 for x in RideWaits["Name"]]
 validTime = []
 inEMH = []
 emhDay = []
 timeSinceStart = []
+timeSinceMidDay = []
 
 for index, row in RideWaits.iterrows():
     tempTime = datetime.now()
@@ -49,10 +50,13 @@ for index, row in RideWaits.iterrows():
     parkOpen = tempTime.replace(hour = pOpen.hour, minute = pOpen.minute, second = 0, microsecond = 0)
     parkClose = tempTime.replace(hour = pClose.hour, minute = pClose.minute, second = 0, microsecond = 0)
     timeDiff = cTime.hour - pOpen.hour
+    midDiff = abs(cTime.hour - 14)
     if parkClose < parkOpen:
         parkClose = parkClose.replace(day = parkClose.day + 1)
         timeDiff = 24 - pOpen.hour + cTime.hour
+        midDiff = abs(cTime.hour + 24 - 14)
     timeSinceStart.append(timeDiff)
+    timeSinceMidDay.append(midDiff)
     if (pd.isnull(row["EMHOpen"])== False) & (pd.isnull(row["EMHClose"]) == False):
         eOpen = row["EMHOpen"]
         eClose = row["EMHClose"]
@@ -83,6 +87,7 @@ RideWaits["inEMH"] = inEMH
 RideWaits["validTime"] = validTime
 RideWaits["EMHDay"] = emhDay
 RideWaits["TimeSinceOpen"] = timeSinceStart
+RideWaits["TimeSinceMidday"] = timeSinceMidDay
 RideWaits = RideWaits[RideWaits["validTime"] == 1]
 
 RideWaits["Month"] = RideWaits["Date"].dt.month
