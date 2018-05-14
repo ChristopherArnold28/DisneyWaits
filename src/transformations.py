@@ -2,9 +2,6 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-RideWaits = pd.read_csv("*****/DisneyWaits/src/disneyWaitTimes.csv")
-
-
 def transformData(RideWaits):
     RideWaits["RideId"] = pd.Categorical(RideWaits["RideId"]).codes
     RideWaits["Status"] = pd.Categorical(RideWaits["Status"]).codes
@@ -63,7 +60,6 @@ def transformData(RideWaits):
             emh = "none"
             emhDay.append(0)
             magicHourType.append("None")
-        print(index + " " + magicHourType)
         if (currentParkTime < parkClose) & (currentParkTime > parkOpen):
             validtime = 1
             inemh = 0
@@ -104,15 +100,9 @@ def transformData(RideWaits):
     RideWaits["TimeSinceMidday"] = timeSinceMidDay
     RideWaits["MagicHourType"] = magicHourType
     RideWaits = RideWaits[RideWaits["validTime"] == 1]
-
+    RideWaits["SimpleStatus"] = pd.Categorical(RideWaits["SimpleStatus"])
     #RideWaits["Month"] = RideWaits["Date"].dt.month
     RideWaits["TimeSinceRideOpen"] = (RideWaits["Date"] - RideWaits["OpeningDate"]).dt.days
     RideWaits["MagicHourType"] = pd.Categorical(RideWaits["MagicHourType"])
 
     return RideWaits
-
-
-#print(RideWaits.head())
-
-RideWaits = transformData(RideWaits)
-print(RideWaits.info())
