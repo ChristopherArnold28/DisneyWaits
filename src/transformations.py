@@ -93,16 +93,16 @@ def transformData(RideWaits):
         timeSinceMidDay.append(tSinceMidDay)
 
 
-    RideWaits["inEMH"] = inEMH
-    RideWaits["validTime"] = validTime
-    RideWaits["EMHDay"] = emhDay
-    RideWaits["TimeSinceOpen"] = timeSinceStart
-    RideWaits["TimeSinceMidday"] = timeSinceMidDay
-    RideWaits["MagicHourType"] = magicHourType
+    RideWaits.loc[:,'inEMH'] = inEMH
+    RideWaits.loc[:,'validTime'] = validTime
+    RideWaits.loc[:,'EMHDay'] = emhDay
+    RideWaits.loc[:,'TimeSinceOpen'] = timeSinceStart
+    RideWaits.loc[:,'TimeSinceMidday'] = timeSinceMidDay
+    RideWaits.loc[:,'MagicHourType'] = magicHourType
     RideWaits = RideWaits[RideWaits["validTime"] == 1]
-    RideWaits["SimpleStatus"] = pd.Categorical(RideWaits["SimpleStatus"])
+    RideWaits.loc[:,'SimpleStatus'] = pd.Categorical(RideWaits["SimpleStatus"])
     #RideWaits["Month"] = RideWaits["Date"].dt.month
-    RideWaits["TimeSinceRideOpen"] = (RideWaits["Date"] - RideWaits["OpeningDate"]).dt.days
-    RideWaits["MagicHourType"] = pd.Categorical(RideWaits["MagicHourType"])
+    RideWaits.loc[:,'TimeSinceRideOpen'] = (RideWaits["Date"] - RideWaits["OpeningDate"]).dt.days
+    RideWaits.loc[:,'MagicHourType'] = pd.Categorical(RideWaits["MagicHourType"])
 
     return RideWaits
