@@ -11,6 +11,9 @@ import pymysql
 import config
 import transformations
 
+def saveMetrics(df, connection):
+
+
 def buildModel(df, keyFeatures):
     categoryColumns = df.select_dtypes(include = ['category']).columns
     df["Name"] = pd.Categorical(df["Name"]).codes
@@ -18,7 +21,7 @@ def buildModel(df, keyFeatures):
         df[col] = pd.Categorical(df[col]).codes
 
     #print(df.info())
-    rf = RandomForestRegressor(random_state = 1, n_estimators = 100)
+    rf = RandomForestRegressor(bootstrap = True, max_depth = 50, max_features = 7, min_samples_leaf = 1, n_estimators = 500)
     predictions = cross_val_predict(rf, df[keyFeatures], df["Wait"], cv = 5)
 
     rmse = metrics.mean_squared_error(predictions, df["Wait"])**(1/2)
