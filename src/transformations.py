@@ -33,6 +33,8 @@ def transformData(RideWaits):
     timeSinceStart = []
     timeSinceMidDay = []
     magicHourType = []
+    timeSinceOpenMinutes = []
+
     for index, row in RideWaits.iterrows():
         tempTime = datetime.now()
         cTime = row["Time"]
@@ -61,14 +63,14 @@ def transformData(RideWaits):
             emhDay.append(0)
             magicHourType.append("None")
         if (currentParkTime < parkClose) & (currentParkTime > parkOpen):
-            validtime = 1
-            inemh = 0
             #print("Current Time is: " + str(currentParkTime) + " and ParkHours are "+ str(parkOpen) +" to " + str(parkClose) + " " +str(validtime))
-            tSinceOpen = cTime.hour - parkOpen.hour
-            tSinceMidDay = abs(cTime.hour - 14)
-            if cTime.hour < parkOpen.hour:
-                tSinceOpen = cTime.hour + 24 - parkOpen.hour
-                tSinceMidDay = abs(cTime.hour - 14 + 24)
+            tSinceOpen = currentParkTime.hour - parkOpen.hour
+            tSinceOpenMinutes = currentParkTime - parkOpen
+            tSinceMidDay = abs(currentParkTime.hour - 14)
+            if currentParkTime.hour < parkOpen.hour:
+                tSinceOpen = currentParkTime.hour + 24 - parkOpen.hour
+                tSinceOpenMinutes = currentParkTime.replace(day = currentParkTime.day + 1) - parkOpen
+                tSinceMidDay = abs(currentParkTime.hour - 14 + 24)
             validTime.append(1)
             inEMH.append(0)
         else:
@@ -76,33 +78,38 @@ def transformData(RideWaits):
                 validTime.append(1)
                 inEMH.append(1)
                 if (emhClose.hour == parkOpen.hour):
-                    tSinceOpen = cTime.hour - emhOpen.hour
-                    tSinceMidDay = abs(cTime.hour - 14)
+                    tSinceOpen = currentParkTime.hour - emhOpen.hour
+                    tSinceOpenMinutes = currentParkTime - emhOpen
+                    tSinceMidDay = abs(currentParkTime.hour - 14)
 
                 else:
-                    if cTime.hour < parkOpen.hour:
-                        tSinceOpen = cTime.hour + 24 - parkOpen.hour
-                        tSinceMidDay = abs(cTime.hour - 14 + 24)
+                    if currentParkTime.hour < parkOpen.hour:
+                        tSinceOpen = currentParkTime.hour + 24 - parkOpen.hour
+                        tSinceOpenMinutes = currentParkTime.replace(day = currentParkTime.day + 1) - parkOpen
+                        tSinceMidDay = abs(currentParkTime.hour - 14 + 24)
                     else:
-                        tSinceOpen = cTime.hour - parkOpen.hour
-                        tSinceMidDay = abs(cTime.hour - 14)
+                        tSinceOpen = currentParkTime.hour - parkOpen.hour
+                        tSinceOpenMinutes = currentParkTime - parkOpen
+                        tSinceMidDay = abs(currentParkTime.hour - 14)
             else:
                 validTime.append(0)
                 inEMH.append(0)
         timeSinceStart.append(tSinceOpen)
         timeSinceMidDay.append(tSinceMidDay)
+        timeSinceOpenMinutes.append(tSinceOpenMinutes)
 
 
-    RideWaits.loc[:,'inEMH'] = inEMH
-    RideWaits.loc[:,'validTime'] = validTime
-    RideWaits.loc[:,'EMHDay'] = emhDay
-    RideWaits.loc[:,'TimeSinceOpen'] = timeSinceStart
-    RideWaits.loc[:,'TimeSinceMidday'] = timeSinceMidDay
-    RideWaits.loc[:,'MagicHourType'] = magicHourType
+    RideWaits["inEMH"] = inEMH
+    RideWaits["validTime"] = validTime
+    RideWaits["EMHDay"] = emhDay
+    RideWaits["TimeSinceOpen"] = timeSinceStart
+    RideWaits["TimeSinceMidday"] = timeSinceMidDay
+    RideWaits["MagicHourType"] = magicHourType
+    RideWaits["MinutesSinceOpen"] = [x.total_seconds()/60 for x in timeSinceOpenMinutes]
+    RideWaits["SimpleStatus"] = pd.Categorical(RideWaits["SimpleStatus"])
     RideWaits = RideWaits[RideWaits["validTime"] == 1]
-    RideWaits.loc[:,'SimpleStatus'] = pd.Categorical(RideWaits["SimpleStatus"])
     #RideWaits["Month"] = RideWaits["Date"].dt.month
-    RideWaits.loc[:,'TimeSinceRideOpen'] = (RideWaits["Date"] - RideWaits["OpeningDate"]).dt.days
-    RideWaits.loc[:,'MagicHourType'] = pd.Categorical(RideWaits["MagicHourType"])
+    RideWaits["MagicHourType"] = pd.Categorical(RideWaits["MagicHourType"])
+    RideWaits["TimeSinceRideOpen"] = (RideWaits["Date"] - RideWaits["OpeningDate"]).dt.days
 
     return RideWaits

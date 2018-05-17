@@ -24,7 +24,13 @@ RideWaits = pd.read_sql_query("call DisneyDB.RideWaitQuery", conn)
 RideWaits = transformations.transformData(RideWaits)
 
 #build model based on historical data and save some important metrics
-keyFeatures = ["Name","MagicHourType", "Tier", "IntellectualProp", "SimpleStatus", "ParkName", "DayOfWeek", "Weekend", "TimeSinceOpen", "CharacterExperience", "TimeSinceMidday", "inEMH", "EMHDay"]
+keyFeatures = ["Name","MagicHourType",
+                "Tier", "IntellectualProp",
+                "SimpleStatus", "ParkName",
+                "DayOfWeek", "Weekend", "TimeSinceOpen", "MinutesSinceOpen",
+                "CharacterExperience", "TimeSinceMidday",
+                "inEMH", "EMHDay"]
+
 newModel = ml.buildModel(RideWaits, keyFeatures, "Wait")
 
 #gather new data based on all rides and build time frame based on open/close
