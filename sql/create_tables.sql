@@ -47,3 +47,11 @@ CREATE TABLE `Weather` (
   `Location` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `Metrics` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` text NOT NULL,
+  `Value` float DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Id` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+

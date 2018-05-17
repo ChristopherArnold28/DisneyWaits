@@ -10,8 +10,16 @@ import matplotlib.pyplot as plt
 import pymysql
 import config
 import transformations
+from sklearn.model_selection import KFold
 
 def saveMetrics(df, connection):
+    conn = pymysql.connect(config.host, user=config.username,port=config.port,
+                               passwd=config.password)
+    cur = conn.cursor()
+    for index, row in df.iterrows():
+        insertStatment = "insert into DisneyDB.Metrics (Name, Value) values ('"+ str(row["Metric Name"]) + "'," + str(row["Metric Value"])+")"
+        cur.execute(insertStatment)
+        conn.commit()
 
 def cross_validation_metrics(df, key_cols, target, folds):
     df = df.dropna(how = 'any')
@@ -62,7 +70,7 @@ def cross_validation_metrics(df, key_cols, target, folds):
     }
     return return_dict
 
-def buildModel(df, keyFeatures):
+def buildModel(df, keyFeatures, target):
     categoryColumns = df.select_dtypes(include = ['category']).columns
     df["Name"] = pd.Categorical(df["Name"]).codes
     for col in categoryColumns:
@@ -71,8 +79,22 @@ def buildModel(df, keyFeatures):
     #print(df.info())
     rf = RandomForestRegressor(bootstrap = True, max_depth = 50, max_features = 7, min_samples_leaf = 1, n_estimators = 500)
 
-    metrics = cross_validation_metrics(df, keyFeatures, "Wait", 10)
+    metrics = cross_validation_metrics(df, keyFeatures, target, 10)
+    metric_frame = pd.DataFrame(list(metrics.items()), columns = ['Metric Name', 'Metric Value'])
+
+    connection = {
+        'host' : config.host,
+        'dbname' : config.dbname,
+        'username' : config.username,
+        'password' : config.password,
+        'port' : config.port
+    }
+
+    saveMetrics(metric_frame,connection)
 
     rf.fit(df[keyFeatures], df["Wait"])
-
+    # returns = {
+    #     'model':rf,
+    #     'metrics':metrics
+    # }
     return(rf)
