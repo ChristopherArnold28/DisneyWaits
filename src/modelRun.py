@@ -13,6 +13,7 @@ import config
 import transformations
 import ml
 from sklearn.model_selection import KFold
+import pandas as pd
 
 conn = pymysql.connect(config.host, user=config.username,port=config.port,
                            passwd=config.password)

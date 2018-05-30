@@ -36,9 +36,11 @@ def cross_validation_metrics(df, key_cols, target, folds):
     for train_index, test_index in kf.split(X):
         X_train, X_test = X.iloc[train_index], X.iloc[test_index]
         y_train, y_test = y[train_index], y[test_index]
-        rf = RandomForestRegressor(n_estimators = 500, bootstrap = True, max_depth = 50, max_features= 7, min_samples_leaf = 1)
+        rf = RandomForestRegressor(n_estimators = 1800,max_features = 8, min_samples_split = 4, min_samples_leaf = 1,max_depth = 60)
         rf.fit(X_train, y_train)
         predictions = rf.predict(X_test)
+        predictions = predictions[y_test>0]
+        y_test = y_test[y_test>0]
         rmse = metrics.mean_squared_error(predictions, y_test)**(1/2)
         var = metrics.explained_variance_score(predictions,y_test)
         pearsoncorr = pearsonr(predictions, np.array(y_test))
@@ -70,16 +72,18 @@ def cross_validation_metrics(df, key_cols, target, folds):
     }
     return return_dict
 
+
 def buildModel(df, keyFeatures, target):
     categoryColumns = df.select_dtypes(include = ['category']).columns
-    df["Name"] = pd.Categorical(df["Name"]).codes
+    fittingFrame = df
+    fittingFrame["Name"] = pd.Categorical(fittingFrame["Name"]).codes
     for col in categoryColumns:
-        df[col] = pd.Categorical(df[col]).codes
+        fittingFrame[col] = pd.Categorical(df[col]).codes
 
     #print(df.info())
-    rf = RandomForestRegressor(bootstrap = True, max_depth = 50, max_features = 7, min_samples_leaf = 1, n_estimators = 500)
+    rf = RandomForestRegressor(n_estimators = 1800,max_features = 8, min_samples_split = 4, min_samples_leaf = 1,max_depth = 60)
 
-    metrics = cross_validation_metrics(df, keyFeatures, target, 10)
+    metrics = cross_validation_metrics(fittingFrame, keyFeatures, target, 10)
     metric_frame = pd.DataFrame(list(metrics.items()), columns = ['Metric Name', 'Metric Value'])
 
     connection = {
@@ -92,7 +96,7 @@ def buildModel(df, keyFeatures, target):
 
     saveMetrics(metric_frame,connection)
 
-    rf.fit(df[keyFeatures], df["Wait"])
+    rf.fit(fittingFrame[keyFeatures], target)
     # returns = {
     #     'model':rf,
     #     'metrics':metrics
