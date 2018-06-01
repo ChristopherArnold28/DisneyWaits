@@ -1,5 +1,4 @@
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.cross_validation import cross_val_predict
 import sklearn.metrics as metrics
 from scipy.stats.stats import pearsonr
 import pandas as pd
@@ -21,9 +20,9 @@ def saveMetrics(df, connection):
         cur.execute(insertStatment)
         conn.commit()
 
-def cross_validation_metrics(df, key_cols, target, folds):
+def cross_validation_metrics(df, target, folds):
     df = df.dropna(how = 'any')
-    X = df[key_cols]
+    X = df.drop([target])
     y = np.array(df[target])
     overall_rmse = []
     overall_accuracy = []
@@ -74,18 +73,19 @@ def cross_validation_metrics(df, key_cols, target, folds):
 
 
 def buildModel(df, keyFeatures, target):
+    fittingFrame = df[[keyFeatures,target]]
+    fittingFrame["Name"] = pd.Categorical(fittingFrame["Name"])
     categoryColumns = df.select_dtypes(include = ['category']).columns
-    fittingFrame = df
-    fittingFrame["Name"] = pd.Categorical(fittingFrame["Name"]).codes
     for col in categoryColumns:
-        fittingFrame[col] = pd.Categorical(df[col]).codes
+        currentCategorical = pd.get_dummies(fittingFrame[col])
+        fittingFrame = pd.concat([fittingFrame,currentCategorical], axis = 1)
 
     #print(df.info())
     rf = RandomForestRegressor(n_estimators = 1800,max_features = 8, min_samples_split = 4, min_samples_leaf = 1,max_depth = 60)
 
-    metrics = cross_validation_metrics(fittingFrame, keyFeatures, target, 10)
+    metrics = cross_validation_metrics(fittingFrame, target, 10)
     metric_frame = pd.DataFrame(list(metrics.items()), columns = ['Metric Name', 'Metric Value'])
-
+    X = fittingFrame.drop([target])
     connection = {
         'host' : config.host,
         'dbname' : config.dbname,
@@ -96,7 +96,7 @@ def buildModel(df, keyFeatures, target):
 
     saveMetrics(metric_frame,connection)
 
-    rf.fit(fittingFrame[keyFeatures], fittingFrame[target])
+    rf.fit(X, fittingFrame[target])
     # returns = {
     #     'model':rf,
     #     'metrics':metrics
