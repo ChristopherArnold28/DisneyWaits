@@ -22,7 +22,7 @@ def saveMetrics(df, connection):
 
 def cross_validation_metrics(df, target, folds):
     df = df.dropna(how = 'any')
-    X = df.drop([target])
+    X = df.drop([target], axis = 1)
     y = np.array(df[target])
     overall_rmse = []
     overall_accuracy = []
@@ -85,7 +85,7 @@ def buildModel(df, keyFeatures, target):
 
     metrics = cross_validation_metrics(fittingFrame, target, 10)
     metric_frame = pd.DataFrame(list(metrics.items()), columns = ['Metric Name', 'Metric Value'])
-    X = fittingFrame.drop([target])
+    X = fittingFrame.drop([target], axis = 1)
     connection = {
         'host' : config.host,
         'dbname' : config.dbname,
