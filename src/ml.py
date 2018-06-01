@@ -96,7 +96,7 @@ def buildModel(df, keyFeatures, target):
 
     saveMetrics(metric_frame,connection)
 
-    rf.fit(fittingFrame[keyFeatures], target)
+    rf.fit(fittingFrame[keyFeatures], fittingFrame[target])
     # returns = {
     #     'model':rf,
     #     'metrics':metrics

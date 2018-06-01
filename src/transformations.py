@@ -44,14 +44,27 @@ def transformData(RideWaits):
         parkOpen = tempTime.replace(hour = pOpen.hour, minute = pOpen.minute, second = 0, microsecond = 0)
         parkClose = tempTime.replace(hour = pClose.hour, minute = pClose.minute, second = 0, microsecond = 0)
         if parkClose < parkOpen:
-            parkClose = parkClose.replace(day = parkClose.day + 1)
+            try:
+                parkClose = parkClose.replace(day = parkClose.day + 1)
+            except:
+                try:
+                    parkClose = parkClose.replace(month = parkClose.month + 1, day = 1)
+                except:
+                    parkClose = parkClose.replace(year = 1, month = 1, day = 1)
+
         if (pd.isnull(row["EMHOpen"])== False) & (pd.isnull(row["EMHClose"]) == False):
             eOpen = row["EMHOpen"]
             eClose = row["EMHClose"]
             emhOpen = tempTime.replace(hour = eOpen.hour, minute = eOpen.minute, second = 0, microsecond = 0)
             emhClose = tempTime.replace(hour = eClose.hour, minute = eClose.minute, second = 0, microsecond = 0)
             if emhClose < emhOpen:
-                emhClose = emhClose.replace(day = emhClose.day + 1)
+                try:
+                    emhClose = emhClose.replace(day = emhClose.day + 1)
+                except:
+                    try:
+                        emhClose = emhClose.replace(month = emhClose.month + 1, day = 1)
+                    except:
+                        emhClose = emhClose.replace(year = 1,month = 1, day = 1)
             emh = "ok"
             emhDay.append(1)
             if emhClose.hour == parkOpen.hour:

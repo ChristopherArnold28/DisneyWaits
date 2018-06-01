@@ -23,7 +23,7 @@ RideWaits = pd.read_sql_query("call DisneyDB.RideWaitQuery", conn)
 
 #transform data for model bulding
 RideWaits = transformations.transformData(RideWaits)
-
+originalData = RideWaits.copy()
 #build model based on historical data and save some important metrics
 keyFeatures = ["Name","MagicHourType",
                 "Tier", "IntellectualProp",
