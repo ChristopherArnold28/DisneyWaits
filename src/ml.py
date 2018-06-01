@@ -79,6 +79,7 @@ def buildModel(df, keyFeatures, target):
     for col in categoryColumns:
         currentCategorical = pd.get_dummies(fittingFrame[col])
         fittingFrame = pd.concat([fittingFrame,currentCategorical], axis = 1)
+        fittingFrame.drop([col], axis = 1)
 
     #print(df.info())
     rf = RandomForestRegressor(n_estimators = 1800,max_features = 8, min_samples_split = 4, min_samples_leaf = 1,max_depth = 60)
