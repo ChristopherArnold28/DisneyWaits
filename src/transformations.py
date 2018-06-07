@@ -124,5 +124,6 @@ def transformData(RideWaits):
     #RideWaits["Month"] = RideWaits["Date"].dt.month
     RideWaits["MagicHourType"] = pd.Categorical(RideWaits["MagicHourType"])
     RideWaits["TimeSinceRideOpen"] = (RideWaits["Date"] - RideWaits["OpeningDate"]).dt.days
+    RideWaits["DayOfWeek"] = pd.Categorical(RideWaits["DayOfWeek"])
 
     return RideWaits

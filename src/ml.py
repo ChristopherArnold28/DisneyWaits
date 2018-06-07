@@ -20,9 +20,14 @@ def saveMetrics(df, connection):
         cur.execute(insertStatment)
         conn.commit()
 
-def cross_validation_metrics(df, target, folds):
+import sklearn.metrics as metrics
+from sklearn.model_selection import KFold
+def cross_validation_metrics(df,  target, folds, key_cols = None,):
     df = df.dropna(how = 'any')
-    X = df.drop([target], axis = 1)
+    if key_cols is None:
+        X = df.drop(target, axis = 1)
+    else:
+        X = df[key_cols]
     y = np.array(df[target])
     overall_rmse = []
     overall_accuracy = []
@@ -35,7 +40,7 @@ def cross_validation_metrics(df, target, folds):
     for train_index, test_index in kf.split(X):
         X_train, X_test = X.iloc[train_index], X.iloc[test_index]
         y_train, y_test = y[train_index], y[test_index]
-        rf = RandomForestRegressor(n_estimators = 1800,max_features = 8, min_samples_split = 4, min_samples_leaf = 1,max_depth = 60)
+        rf = RandomForestRegressor(n_estimators = 1800,max_features = 'auto', min_samples_split = 4, min_samples_leaf = 1,max_depth = 60)
         rf.fit(X_train, y_train)
         predictions = rf.predict(X_test)
         predictions = predictions[y_test>0]
@@ -73,16 +78,18 @@ def cross_validation_metrics(df, target, folds):
 
 
 def buildModel(df, keyFeatures, target):
-    fittingFrame = df[[keyFeatures,target]]
+    fittingFrame = df.copy()
+    keyFeatures.append(target)
     fittingFrame["Name"] = pd.Categorical(fittingFrame["Name"])
-    categoryColumns = df.select_dtypes(include = ['category']).columns
+    fittingFrame = fittingFrame[keyFeatures]
+    categoryColumns = fittingFrame.select_dtypes(include = ['category']).columns
     for col in categoryColumns:
         currentCategorical = pd.get_dummies(fittingFrame[col])
         fittingFrame = pd.concat([fittingFrame,currentCategorical], axis = 1)
-        fittingFrame.drop([col], axis = 1)
+        fittingFrame = fittingFrame.drop([col], axis = 1)
 
     #print(df.info())
-    rf = RandomForestRegressor(n_estimators = 1800,max_features = 8, min_samples_split = 4, min_samples_leaf = 1,max_depth = 60)
+    rf = RandomForestRegressor(n_estimators = 1800,max_features = 'auto', min_samples_split = 4, min_samples_leaf = 1,max_depth = 60)
 
     metrics = cross_validation_metrics(fittingFrame, target, 10)
     metric_frame = pd.DataFrame(list(metrics.items()), columns = ['Metric Name', 'Metric Value'])
