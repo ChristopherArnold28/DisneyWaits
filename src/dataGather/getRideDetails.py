@@ -4,10 +4,10 @@ import requests
 import re
 import pymysql
 
-locations = [{"name":"Magic Kingdom", "linkName":"magic-kingdom"},
+locations = [{"name":"Magic Kingdom Park", "linkName":"magic-kingdom"},
             {"name":"EpCot","linkName":"epcot"},
-            {"name":"Hollywood Studios","linkName":"hollywood-studios"},
-            {"name":"Animal Kingdom","linkName":"animal-kingdom"}]
+            {"name":"Disneys Hollywood Studios","linkName":"hollywood-studios"},
+            {"name":"Disneys Animal Kingdom Theme Park","linkName":"animal-kingdom"}]
 import config
 
 conn = pymysql.connect(config.host, user=config.username,port=config.port,
@@ -49,6 +49,6 @@ for location in locations:
             insertRide = "insert into DisneyDB.Ride (Name, OpeningDate, Tier, ParkId) values ('" + tableName + "','"+ str(rideJson["opened_on"]) + "','"+ str(rideJson["scope_and_scale_code"])+ "',"+str(locationId)+")"
         else:
             rideId = rideTable['Id'][0]
-            insertRide = "update DisneyDB.Ride set OpeningDate='"+ str(rideJson["opened_on"]) + "', Tier = '"+ str(rideJson["scope_and_scale_code"])+ "', ParkId = "+str(locationId)+" where Id = "+ str(rideId)
+            insertRide = "update DisneyDB.Ride set OpeningDate='"+ str(rideJson["opened_on"]) + "', Tier = '"+ str(rideJson["scope_and_scale_code"])+ "' where Id = "+ str(rideId)
         cur.execute(insertRide)
         conn.commit()

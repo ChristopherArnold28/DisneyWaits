@@ -1,2 +1,4 @@
 src/config.py
 *.pyc
+src/dataGather/config.py
+src/dataGather/results.txt
