@@ -95,7 +95,7 @@ for current_id in ids:
 
         if 'wait_time' in wait_dict:
             current_wait = wait_dict['wait_time']
-            query = "insert into DisneyDB.Ride_Waits (RideId, Date, Time, Wait) values (%i, '%s','%s', %i)"%(db_ride_id, date, time, current_wait)
+            query = "insert into DisneyDB.Ride_Waits_Today (RideId, Date, Time, Wait) values (%i, '%s','%s', %i)"%(db_ride_id, date, time, current_wait)
             cur.execute(query)
             conn.commit()
 
