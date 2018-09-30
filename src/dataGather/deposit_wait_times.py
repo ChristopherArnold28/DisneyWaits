@@ -19,4 +19,8 @@ for i, r in today_wait_times.iterrows():
 query = 'delete from DisneyDB.Ride_Waits_Today where id >0'
 
 cur.execute(query)
+
+#update haswaits so that ceratin rides with waits have the filter information so that ican subset easier
+update_query = 'update DisneyDB.Ride set HasWaits = 1 where Id in (select distinct(RideId) from DisneyDB.Ride_Waits)'
+cur.execute(update_query)
 conn.commit()
