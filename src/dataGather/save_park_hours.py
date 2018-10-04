@@ -30,8 +30,8 @@ for current_id in ids:
     park_close= park_hours['park_close'].strftime('%I:%M %p') if park_hours['park_close'] is not None else 'None'
     emh_open = park_hours['emh_open'].strftime('%I:%M %p') if park_hours['emh_open'] is not None else 'None'
     emh_close = park_hours['emh_close'].strftime('%I:%M %p') if park_hours['emh_close'] is not None else 'None'
-    # special_open = park_hours['special_open'].strftime('%I:%M %p') if park_hours['special_open'] is not None else 'None'
-    # special_close = park_hours['special_close'].strftime('%I:%M %p') if park_hours['special_close'] is not None else 'None'
-    query = "insert into DisneyDB.ParkHours (Date, ParkId, ParkOpen, ParkClose, EMHOpen, EMHClose) values ('%s', %i, '%s','%s','%s','%s')"%(today, park_db_id, park_open, park_close, emh_open, emh_close)
+    special_open = park_hours['special_open'].strftime('%I:%M %p') if park_hours['special_open'] is not None else 'None'
+    special_close = park_hours['special_close'].strftime('%I:%M %p') if park_hours['special_close'] is not None else 'None'
+    query = "insert into DisneyDB.ParkHours (Date, ParkId, ParkOpen, ParkClose, EMHOpen, EMHClose, SpecialOpen, SpecialClose) values ('%s', %i, '%s','%s','%s','%s','%s','%s')"%(today, park_db_id, park_open, park_close, emh_open, emh_close,special_open,special_close)
     cur.execute(query)
     conn.commit()

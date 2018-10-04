@@ -6,7 +6,7 @@ from disney_attractions import Attraction
 from disney_entertainment import Entertainment
 from datetime import datetime
 from pytz import timezone
-tz = timezone('US/Eastern')
+
 
 conn = pymysql.connect(config.host, user=config.username,port=config.port,passwd=config.password)
 cur = conn.cursor()
@@ -26,15 +26,14 @@ string = ent_ids.read()
 ent_list = str.splitlines(string)
 entertainment_ids = [x.split(':')[-1] for x in ent_list]
 
-time = datetime.now(tz)
-date = time.date()
-time = time.time().strftime("%H:%M")
+
 
 for current_id in ids:
-
+    tz = timezone('US/Eastern')
     park = disney_parks.Park(current_id)
     current_park_name = park.getParkName().replace("'","")
     print("Working On Park:" + str(current_park_name))
+
     query = "select * from DisneyDB.Park where Name = '" + current_park_name + "'"
     park_table = pd.read_sql_query(query, conn)
     if park_table.shape[0] < 1:
@@ -44,8 +43,14 @@ for current_id in ids:
         park_table = pd.read_sql_query(query, conn)
 
     park_db_id = park_table['Id'][0]
-
+    if (park_db_id == 10) or (park_db_id == 11):
+        tz = timezone('US/Pacific')
     #get our wait times
+
+    time = datetime.now(tz)
+    date = time.date()
+    time = time.time().strftime("%H:%M")
+
     wait_times = park.getCurrentWaitTimes()
     for key, wait_dict in wait_times.items():
         is_attraction = False
