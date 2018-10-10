@@ -84,4 +84,10 @@ CREATE TABLE `Metrics` (
   UNIQUE KEY `Id` (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
 
+CREATE TABLE `Ride_Current_Status` (
+  `RideId` int(11) NOT NULL,
+  `Status` text NOT NULL,
+  `FastPassAvailable` text NOT NULL,
+  PRIMARY KEY (`RideId`)
+) ENGINE=InnoDB AUTO_INCREMENT=94482 DEFAULT CHARSET=latin1;
 
