@@ -4,6 +4,7 @@ import sys
 from datetime import datetime, timedelta
 from disney_auth import get_header
 from disney_parks import Park
+import re
 
 class Attraction(object):
 
@@ -41,6 +42,9 @@ class Attraction(object):
             sys.exit()
 
 
+    def getAttractionData(self):
+        return self.__data
+
     def getAttractionName(self):
         return self.__attraction_name
 
@@ -55,3 +59,13 @@ class Attraction(object):
             return self.__data['links']['ancestorLand']['title'].replace("-"," ").replace(u"\u2013", " ").replace("'","")
         except:
             return None
+
+    def getMobileDescription(self):
+        try:
+            string = self.__data['descriptions']['shortDescriptionMobile']['text'].replace(u"\u201c"," ").replace(u"\u201d"," ").replace(u"\u2019"," ").replace(u"\u2014", " ").replace(u"\u2022", " ").replace(u"\u2026", " ").replace(u"\u2013", " ")
+            string = string.replace(u"\u2018", " ").replace(u"\u2122", " ")
+            string = string.replace('"', "'")
+            string = re.sub("<.?a.*?>","",string)
+            return string
+        except:
+            return "No available description"

@@ -46,6 +46,8 @@ class Park(object):
     def getParkName(self):
         return self.__park_name
 
+    def getParkData(self):
+        return self.__park_data
 
     def getTodayParkHours(self, date = 'Today'):
         if date == 'Today':
@@ -125,6 +127,8 @@ class Park(object):
                 current_dict['wait_time'] = wait_info['postedWaitMinutes']
             if 'fastPass' in wait_info:
                 current_dict['fast_pass_info'] = wait_info['fastPass']
+            if 'status' in wait_info:
+                current_dict['status'] = wait_info['status']
 
             ride_wait_data[current_dict["ride_id"]] = current_dict
 

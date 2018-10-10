@@ -4,6 +4,7 @@ import sys
 from datetime import datetime, timedelta
 from disney_auth import get_header
 from disney_parks import Park
+import re
 
 class Entertainment(object):
 
@@ -40,6 +41,18 @@ class Entertainment(object):
             print('That entertainment or ID is not available. ID = {}\n Full list of possible entertainment and their ID\'s can be found here: https://scaratozzolo.github.io/MouseTools/entertainments.txt'.format(id))
             sys.exit()
 
+    def getMobileDescription(self):
+        try:
+            string = self.__data['descriptions']['shortDescriptionMobile']['text'].replace(u"\u201c"," ").replace(u"\u201d"," ").replace(u"\u2019"," ").replace(u"\u2014", " ").replace(u"\u2022", " ").replace(u"\u2026", " ").replace(u"\u2013", " ")
+            string = string.replace(u"\u2018", " ").replace(u"\u2122", " ").replace(u"\u2015", " ")
+            string = string.replace('"', "'")
+            string = re.sub("<.?a.*?>","",string)
+            return string
+        except:
+            return "No available description"
+
+    def getEntertainmentData(self):
+        return self.__data
 
     def getEntertainmentName(self):
         return self.__entertainment_name

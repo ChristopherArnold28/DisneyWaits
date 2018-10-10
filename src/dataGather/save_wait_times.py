@@ -104,4 +104,26 @@ for current_id in ids:
             cur.execute(query)
             conn.commit()
 
+        current_status = "No Status to Report"
+        fastpass_availability = "Not a fastpass attraction"
+        if 'status' in wait_dict:
+            current_status = wait_dict['status']
+
+        if 'fast_pass_info' in wait_dict:
+            fast_pass_dict = wait_dict['fast_pass_info']
+            if fast_pass_dict['available']:
+                fastpass_availability = "Fastpasses are Available Today"
+                if 'startTime' in fast_pass_dict:
+                    if fast_pass_dict['startTime'] == "FASTPASS is Not Available":
+                        fastpass_availability = "Fastpasses are no longer Available Today"
+            else:
+                fastpass_availability = "Not a fastpass attraction"
+
+        query = "replace into DisneyDB.Ride_Current_Status (RideId, Status, FastPassAvailable) values (%i, '%s', '%s')"%(db_ride_id, current_status, fastpass_availability)
+        cur.execute(query)
+        conn.commit()
+
+
+
+
 print("success at " + str(time))
