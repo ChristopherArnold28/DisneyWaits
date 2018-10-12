@@ -4,6 +4,7 @@ import sys
 from datetime import datetime, timedelta
 from disney_auth import get_header
 from disney_parks import Park
+from disney_points_of_interest import PointOfInterest
 import re
 
 class Entertainment(object):

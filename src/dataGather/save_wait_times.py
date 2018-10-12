@@ -112,7 +112,6 @@ for current_id in ids:
         if 'fast_pass_info' in wait_dict:
             fast_pass_dict = wait_dict['fast_pass_info']
             if fast_pass_dict['available'] == True:
-                fastpass_availability = "Fastpasses are Available Today"
                 if 'startTime' in fast_pass_dict:
                     if fast_pass_dict['startTime'] == "FASTPASS is Not Available":
                         fastpass_availability = "FASTPASS+ attraction, please check in park kiosk for next available window"
@@ -127,10 +126,9 @@ for current_id in ids:
                         startTimeString = startTimeString[1:] if startTimeString.startswith("0") else startTimeString
                         fastpass_availability = "Next Fastpass  between " + startTimeString + " - " + endTimeString
                 else:
-                    fastpass_availbility = "FASTPASS+ attraction, please check in park kiosk for next window"
+                    fastpass_availability = "FASTPASS+ attraction, please check in park kiosk for next available window"
             if fast_pass_dict['available'] == False:
                 fastpass_availability = "Not a fastpass attraction"
-
         query = "replace into DisneyDB.Ride_Current_Status (RideId, Status, FastPassAvailable) values (%i, '%s', '%s')"%(db_ride_id, current_status, fastpass_availability)
         cur.execute(query)
         conn.commit()
