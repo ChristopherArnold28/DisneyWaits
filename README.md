@@ -15,6 +15,7 @@ overlooked.
 * SRC:
   This holds the `python` necessary to populate the database and perform analysis
   on the data that has been gathered
+* This holds the django developed application that can be found at http://chrisrtopher28.pythonanywhere.com/waittimes/
 
 
 ## Notes on Sources of Data
@@ -25,3 +26,4 @@ The Data I'm pulling is from a multitude of sources and they are credited below
 * [Touring Plans](https://touringplans.com/)
 * [Walt Disney World Park Hours Site](https://disneyworld.disney.go.com/calendars/day/)
 * [The Open Weather Map API](https://openweathermap.org/api)
+* the My Disney Experience app
