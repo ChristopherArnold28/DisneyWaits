@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load tags %}
+
+{% block content %}
+<div class = "jumbotron" style ="background-image:linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)), url({{park.bannerurl}});background-size:100%;background-position:left center; background-repeat:no-repeat">
+<h1>{{park.displayname}}</h1>
+<h3><em>Opening Date: {{park.openingdate}}</em></h3>
+
+  <p><strong>{{park.description}}</strong></p>
+</div>
+  <div style = "margin-left:10px;margin-top:20px; width:40%;float:left">
+    <h2>Longest Waits</h2>
+    {% for ride in top_waits %}
+      <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
+      <p>{{ride.location}}</p>
+      <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
+    {% endfor %}
+    <p> </p>
+    <p> </p>
+    <h2>Shortest Waits</h2>
+    {% for ride in lowest_waits %}
+      <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
+      <p>{{ride.location}}</p>
+      <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
+    {% endfor %}
+  </div>
+  <div class = "container" style = "width:45%;float:right">
+    {%if park.get_todays_parks_hours %}
+      <h5>Today's Park Hours: {% fix_time park.get_todays_parks_hours.parkopen %} - {% fix_time park.get_todays_parks_hours.parkclose %}</h4>
+      {%if park.get_todays_parks_hours.emhopen != "None" %}
+        <h6>Extra Magic Hours: {% fix_time park.get_todays_parks_hours.emhopen%} - {% fix_time park.get_todays_parks_hours.emhclose%}</h4>
+      {% endif %}
+      {%if  park.get_todays_parks_hours.specialopen != "None" %}
+      <h6>Special Ticketed Event Hours: {% fix_time park.get_todays_parks_hours.specialopen%} - {% fix_time park.get_todays_parks_hours.specialclose%}</h4>
+      {% endif %}
+    {% endif %}
+    <div>
+      {% return_map_url park.name park.displayname as park_url %}
+      <img src = {{park_url.url}}>
+    </div>
+    <div>
+      <hr><h4><strong>Current Weather</strong></h4></hr>
+      <div class="box">
+          <article class="media">
+              <div class="media-left">
+                  <figure class="image is-50x50">
+                      <img src={{weather_url}} alt="Image">
+                  </figure>
+              </div>
+              <div class="media-body">
+                <h5 class = "mt-0">  {{park.displayname}}</h5>
+                <p>{{current_weather.temperature}}° F</p>
+                <p>{{current_weather.status}}</p>
+              </div>
+          </article>
+      </div>
+    </div>
+    <div>
+      <hr><h4><a href = "{% url 'all_attractions_with_waits' park.id %}">All current {{park.displayname}} wait times</a></h4></hr>
+    </div>
+    <div>
+      <hr><h4><a href = "{% url 'other_attraction_list' park.id %}">All Other Attractions</a></h4></hr>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load tags %}
+{% if park_list %}
+<div>
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/waltograph" type="text/css"/>
+<ul>
+  {% for park in park_list %}
+  <li style = "border: 5px solid #FFF;padding: 5px;width:50%;height:25%;display:block;float:left;background-image:linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)), url({{park.imageurl}});background-size:100%;background-position:left center; background-repeat:no-repeat"><h2><a style = "color:Black; font-family :'WaltographRegular';font-weight:normal;font-style:normal" href = "{% url 'park_detail' park.id %}">{{park.displayname}}</a></h2>
+  {%if park.get_todays_parks_hours %}
+    <h5>Today's Park Hours: {% fix_time park.get_todays_parks_hours.parkopen %} - {% fix_time park.get_todays_parks_hours.parkclose %}</h5>
+    {%if park.get_todays_parks_hours.emhopen != "None" %}
+    <h5>Extra Magic Hours: {% fix_time park.get_todays_parks_hours.emhopen%} - {% fix_time park.get_todays_parks_hours.emhclose%}</h5>
+    {% endif %}
+    {%if park.get_todays_parks_hours.specialopen != "None" %}
+    <h5>Special Ticketed Event Hours: {% fix_time park.get_todays_parks_hours.specialopen%} - {% fix_time park.get_todays_parks_hours.specialclose%}</h5>
+    {% endif %}
+  {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>There are no Parks in our database </p>
+{% endif %}
+</div>
+
+{% endblock %}

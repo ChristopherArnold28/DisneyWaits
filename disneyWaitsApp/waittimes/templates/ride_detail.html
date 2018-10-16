@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load tags %}
+{% block content %}
+
+<h1>{{ride.name}}</h1>
+<p>
+{{ride.description | safe}}
+</p>
+<hr><strong>Status: </strong>
+  {% if ride.current_status == "Operating" %}
+  <span style = "color:green;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}</hr>
+  {% else %}
+  <span style = "color:red;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}</hr>
+  {% endif %}
+{% if ride.todays_waits %}
+<div style = "margin-left:0px;margin-top:20px; width:55%;float:left">
+  <div id = "chart_container"></div>
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script>
+    Highcharts.chart('chart_container', {{chart|safe}});
+  </script>
+<hr><h3><strong>Latest Wait Times</strong></h3></hr>
+<table class = "table">
+  <thead class = "thead-dark">
+    <tr>
+      <th>Time</th>
+      <th>Wait (Minutes)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for wait in ride.todays_waits.reverse|slice:":10" %}
+      <tr>
+        <td>{% fix_time wait.time %}</td>
+        <td>{{wait.wait}}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+</div>
+<div class = "container" style = "width:40%;float:right">
+  <h3><em>Opening Date: {{ride.openingdate}}</em></h3>
+  <p>Ride Tier: {{ride.tier}}</p>
+  <p>Location: {{ride.location}} in {{ride.parkid.name}}</p>
+  <p>Intellectual Property: {{ride.intellectualprop}}</p>
+  {% return_map_url ride.return_location_string ride.name 1 as ride_url %}
+  <img src = {{ride_url.url}}>
+</div>
+
+
+
+{% endblock %}

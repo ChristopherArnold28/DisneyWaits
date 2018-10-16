@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All other Attractions in {{park.name}}</h1>
+{% for ride in other_attractions %}
+  <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
+  <p>{{ride.location}}</p>
+{% endfor %}
+
+{% endblock %}

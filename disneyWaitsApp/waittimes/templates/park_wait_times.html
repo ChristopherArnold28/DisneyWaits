@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Wait Times in {{park.name}}</h2>
+{% for ride in rides_with_waits %}
+  <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
+  <p>{{ride.location}}</p>
+  <p>Current Wait Time:
+    {% if ride.current_status == "Operating" %}
+    <strong>{{ride.current_wait}}</strong>
+    {% else %}
+    <strong style = "color:red">{{ride.current_status}}</strong>
+    {% endif %}
+  </p>
+{% endfor %}
+
+{% endblock %}
