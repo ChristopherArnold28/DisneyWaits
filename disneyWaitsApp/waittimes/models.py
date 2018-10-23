@@ -135,6 +135,9 @@ class Ride(models.Model):
             else:
                 return current_park.name
 
+    def predicted_waits(self):
+        predicted_set = self.todaywaitspredicted_set.all()
+        return predicted_set
 
     class Meta:
         managed = False
@@ -186,3 +189,12 @@ class RideCurrentStatus(models.Model):
     class Meta:
         managed = False
         db_table = 'Ride_Current_Status'
+
+class TodayWaitsPredicted(models.Model):
+    rideid = models.ForeignKey(Ride, db_column = 'RideId', on_delete = models.SET_NULL, null = True)
+    time = models.TextField(db_column = 'Time')
+    predictedwait = models.IntegerField(db_column = 'PredictedWait')
+
+    class Meta:
+        managed = False
+        db_table = 'Ride_Waits_Today_Predicted'
