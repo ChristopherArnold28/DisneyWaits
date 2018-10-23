@@ -100,9 +100,16 @@ def transformData(RideWaits):
                 else:
                     validTime.append(0)
                     inEMH.append(0)
+                    tSinceOpen = 0
+                    tSinceMidDay = 0
+                    tSinceOpenMinutes = 0
             else:
                 validTime.append(0)
                 inEMH.append(0)
+                tSinceOpen = 0
+                tSinceMidDay = 0
+                tSinceOpenMinutes = 0
+
         timeSinceStart.append(tSinceOpen)
         timeSinceMidDay.append(tSinceMidDay)
         timeSinceOpenMinutes.append(tSinceOpenMinutes)
@@ -114,7 +121,7 @@ def transformData(RideWaits):
     RideWaits["TimeSinceOpen"] = timeSinceStart
     RideWaits["TimeSinceMidday"] = timeSinceMidDay
     RideWaits["MagicHourType"] = magicHourType
-    RideWaits["MinutesSinceOpen"] = [x.total_seconds()/60 for x in timeSinceOpenMinutes]
+    RideWaits["MinutesSinceOpen"] = [x.total_seconds()/60 if x is not 0 else None for x in timeSinceOpenMinutes]
     #RideWaits["SimpleStatus"] = pd.Categorical(RideWaits["SimpleStatus"])
     RideWaits = RideWaits[RideWaits["validTime"] == 1]
 
