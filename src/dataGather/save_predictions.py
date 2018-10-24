@@ -75,7 +75,7 @@ for key,value in todays_predictions.items():
     current_frame['PredictedWait'] = [int(str(x).split(".")[0]) for x in current_frame['PredictedWait']]
     all_predictions = pd.concat([all_predictions, current_frame])
 
-
+cur = conn.cursor()
 for index,row in all_predictions.iterrows():
     query = "insert into DisneyDB.Ride_Waits_Today_Predicted (RideId, Time, PredictedWait) values (%i, '%s', %i)" %(row['RideId'], row['Time'], row['PredictedWait'])
     cur.execute(query)
