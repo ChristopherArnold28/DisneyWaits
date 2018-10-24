@@ -25,6 +25,7 @@
     <tr>
       <th>Time</th>
       <th>Wait (Minutes)</th>
+      <th>Anticipated Wait</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +33,7 @@
       <tr>
         <td>{% fix_time wait.time %}</td>
         <td>{{wait.wait}}</td>
+        <td>{% return_anticipated_wait ride wait.time %}</td>
       </tr>
     {% endfor %}
   </tbody>
