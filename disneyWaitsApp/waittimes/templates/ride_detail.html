@@ -38,9 +38,25 @@
 </table>
 {% endif %}
 </div>
-<div class = "container" style = "width:40%;float:right">
-  <h3><em>Opening Date: {{ride.openingdate}}</em></h3>
-  <p>Ride Tier: {{ride.tier}}</p>
+<div class = "container" style = "width:40%;float:right; margin-top:20px">
+  <h5><em>Opening Date: {{ride.openingdate}}</em></h5>
+  <p>
+    {% if ride.tier == "diversion" %}
+    Ride Tier: Diversion
+    {% endif %}
+    {% if ride.tier == "major_attraction" %}
+    Ride Tier : Major Attraction
+    {% endif %}
+    {% if ride.tier == "minor_attraction" %}
+    Ride Tier: Minor Attraction
+    {% endif %}
+    {% if ride.tier == "headliner" %}
+    Ride Tier: Headliner
+    {% endif %}
+    {% if ride.tier == "super_headliner" %}
+    Ride Tier: Super Headliner
+    {% endif %}
+  </p>
   <p>Location: {{ride.location}} in {{ride.parkid.name}}</p>
   <p>Intellectual Property: {{ride.intellectualprop}}</p>
   {% return_map_url ride.return_location_string ride.name 1 as ride_url %}
