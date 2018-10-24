@@ -36,8 +36,6 @@ end_time = dtime.replace(hour = 23, minute = 45, second = 0, microsecond = 0)
 time_list = date_range(dtime, end_time, 15, 'minutes')
 time_list = [x.time().strftime("%H:%M") for x in time_list]
 
-
-%%time
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_score
 best_params = {'criterion': 'mse',
@@ -75,7 +73,54 @@ for key,value in todays_predictions.items():
     current_frame['PredictedWait'] = [int(str(x).split(".")[0]) for x in current_frame['PredictedWait']]
     all_predictions = pd.concat([all_predictions, current_frame])
 
+RideIds = list(set(RideWaits['RideId']))
+rides_not_predicted = [x for x in RideIds if x not in list(set(all_predictions["RideId"]))]
+if len(rides_not_predicted) > 0:
+    best_params = {'criterion': 'mse',
+     'max_depth': 10,
+     'max_features': 'auto',
+     'min_samples_leaf': 5,
+     'min_samples_split': 2,
+     'n_estimators': 100}
+
+    #rides = list(set(starter_data['Name']))
+    rides = rides_not_predicted
+    global todays_predictions
+    todays_predictions = {}
+
+    import threading
+    num_threads = len(rides)
+
+    threads = []
+    for i in range(num_threads):
+        print(rides[i-1])
+        ride = rides[i-1]
+        current_ride = starter_data.copy()
+        current_ride = starter_data[current_ride['RideId'] == ride]
+        process = threading.Thread(target = make_daily_prediction, args = [current_ride,ride,time_list, best_params, todays_predictions])
+        process.start()
+        threads.append(process)
+
+    for process in threads:
+        process.join()
+
+    more_predictions = pd.DataFrame()
+    for key,value in todays_predictions.items():
+        current_frame = value['predictions']
+        current_frame = current_frame[['RideId','Time','predicted_wait']]
+        current_frame.columns = ['RideId','Time','PredictedWait']
+        current_frame['PredictedWait'] = [int(str(x).split(".")[0]) for x in current_frame['PredictedWait']]
+        more_predictions = pd.concat([more_predictions, current_frame])
+
+
+    all_predictions = pd.concat(all_predictions, more_predictions)
+
+
 cur = conn.cursor()
+query = "delete from DisneyDB.Ride_Waits_Today_Predicted where RideId > 0"
+cur.execute()
+conn.commit()
+
 for index,row in all_predictions.iterrows():
     query = "insert into DisneyDB.Ride_Waits_Today_Predicted (RideId, Time, PredictedWait) values (%i, '%s', %i)" %(row['RideId'], row['Time'], row['PredictedWait'])
     cur.execute(query)
