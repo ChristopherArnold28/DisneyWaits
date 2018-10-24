@@ -68,9 +68,11 @@ for process in threads:
 all_predictions = pd.DataFrame()
 for key,value in todays_predictions.items():
     current_frame = value['predictions']
-    current_frame = current_frame[['RideId','Time','predicted_wait']]
-    current_frame.columns = ['RideId','Time','PredictedWait']
+    current_frame = current_frame[['RideId','Time','predicted_wait','confidence_high','confidence_low']]
+    current_frame.columns = ['RideId','Time','PredictedWait','ConfidenceHigh','ConfidenceLow']
     current_frame['PredictedWait'] = [int(str(x).split(".")[0]) for x in current_frame['PredictedWait']]
+    current_frame['ConfidenceHigh'] = [int(str(x).split(".")[0]) for x  in current_frame['ConfidenceHigh']]
+    current_frame['ConfidenceLow'] = [int(str(x).split(".")[0]) for x in current_frame['ConfidenceLow']]
     all_predictions = pd.concat([all_predictions, current_frame])
 
 RideIds = list(set(RideWaits['RideId']))
@@ -107,22 +109,68 @@ if len(rides_not_predicted) > 0:
     more_predictions = pd.DataFrame()
     for key,value in todays_predictions.items():
         current_frame = value['predictions']
-        current_frame = current_frame[['RideId','Time','predicted_wait']]
-        current_frame.columns = ['RideId','Time','PredictedWait']
+        current_frame = current_frame[['RideId','Time','predicted_wait','confidence_high','confidence_low']]
+        current_frame.columns = ['RideId','Time','PredictedWait','ConfidenceHigh','ConfidenceLow']
         current_frame['PredictedWait'] = [int(str(x).split(".")[0]) for x in current_frame['PredictedWait']]
+        current_frame['ConfidenceHigh'] = [int(str(x).split(".")[0]) for x  in current_frame['ConfidenceHigh']]
+        current_frame['ConfidenceLow'] = [int(str(x).split(".")[0]) for x in current_frame['ConfidenceLow']]
         more_predictions = pd.concat([more_predictions, current_frame])
 
 
     all_predictions = pd.concat(all_predictions, more_predictions)
 
+rides_not_predicted = [x for x in RideIds if x not in list(set(all_predictions["RideId"]))]
+if len(rides_not_predicted) > 0:
+    best_params = {'criterion': 'mse',
+     'max_depth': 10,
+     'max_features': 'auto',
+     'min_samples_leaf': 5,
+     'min_samples_split': 2,
+     'n_estimators': 100}
 
+    #rides = list(set(starter_data['Name']))
+    rides = rides_not_predicted
+    global todays_predictions
+    todays_predictions = {}
+
+    import threading
+    num_threads = len(rides)
+
+    threads = []
+    for i in range(num_threads):
+        print(rides[i-1])
+        ride = rides[i-1]
+        current_ride = starter_data.copy()
+        current_ride = starter_data[current_ride['RideId'] == ride]
+        process = threading.Thread(target = make_daily_prediction, args = [current_ride,ride,time_list, best_params, todays_predictions])
+        process.start()
+        threads.append(process)
+
+    for process in threads:
+        process.join()
+
+    more_predictions = pd.DataFrame()
+    for key,value in todays_predictions.items():
+        current_frame = value['predictions']
+        current_frame = current_frame[['RideId','Time','predicted_wait','confidence_high','confidence_low']]
+        current_frame.columns = ['RideId','Time','PredictedWait','ConfidenceHigh','ConfidenceLow']
+        current_frame['PredictedWait'] = [int(str(x).split(".")[0]) for x in current_frame['PredictedWait']]
+        current_frame['ConfidenceHigh'] = [int(str(x).split(".")[0]) for x  in current_frame['ConfidenceHigh']]
+        current_frame['ConfidenceLow'] = [int(str(x).split(".")[0]) for x in current_frame['ConfidenceLow']]
+        more_predictions = pd.concat([more_predictions, current_frame])
+
+
+    all_predictions = pd.concat(all_predictions, more_predictions)
+
+conn = pymysql.connect(config.host, user=config.username,port=config.port,
+                           passwd=config.password)
 cur = conn.cursor()
 query = "delete from DisneyDB.Ride_Waits_Today_Predicted where RideId > 0"
-cur.execute()
+cur.execute(query)
 conn.commit()
 
 for index,row in all_predictions.iterrows():
-    query = "insert into DisneyDB.Ride_Waits_Today_Predicted (RideId, Time, PredictedWait) values (%i, '%s', %i)" %(row['RideId'], row['Time'], row['PredictedWait'])
+    query = "insert into DisneyDB.Ride_Waits_Today_Predicted (RideId, Time, PredictedWait, ConfidenceHigh, ConfidenceLow) values (%i, '%s', %i, %i, %i)" %(row['RideId'], row['Time'], row['PredictedWait'], row['ConfidenceHigh'],row['ConfidenceLow'])
     cur.execute(query)
     conn.commit()
 
@@ -153,28 +201,29 @@ def make_daily_prediction(current_ride,ride, time_list, best_params, todays_pred
     #predictions_frame = transformations.transformData(predictions_frame)
     model_predictions_frame = new_data_transform(predictions_frame, 3, important_columns)
     predictions_frame['predicted_wait'] = clf.predict(model_predictions_frame[important_columns])
-    predictions_frame = predictions_frame.round({'predicted_wait': 2})
-
-
-#     for time in time_list:
-#         ride_starter['Time'] = time
-#         row_data = ride_starter.copy()
-#         #print(row_data)
-#         try:
-#             row_data = transformations.transformData(row_data)
-#         except:
-#             continue
-#         #print(row_data)
-#         predictions_frame = pd.concat([predictions_frame,row_data])
-#         #print(predictions_frame.iloc[[predictions_frame.shape[0]-1]])
-#         model_predictions_frame = new_data_transform(predictions_frame,3, important_columns)
-#         predictions_frame['Wait'] = clf.predict(model_predictions_frame[important_columns])
-#         #print(predictions_frame)
+    model_predictions_frame = get_conf_interval(clf,model_predictions_frame[important_columns])
+    predictions_frame['confidence_high'] = model_predictions_frame['confidence_high']
+    predictions_frame['confidence_low'] = model_predictions_frame['confidence_low']
 
     ride_predictions['predictions'] = predictions_frame
     todays_predictions[ride] = ride_predictions
 
+def get_conf_interval(clf, df):
+    conf_high_list = []
+    conf_low_list = []
+    for index, row in df.iterrows():
+        current_row = df.loc[[index]]
+        all_predictions = [estimator.predict(current_row) for estimator in clf.estimators_]
+        mean = np.mean(all_predictions)
+        pred_std = np.std(all_predictions)
+        conf_high = (mean + 2*pred_std)
+        conf_low = (mean - 2*pred_std)
+        conf_high_list.append(conf_high)
+        conf_low_list.append(conf_low)
 
+    df['confidence_high'] = conf_high_list
+    df['confidence_low'] = conf_low_list
+    return df
 
 def create_dummies(df,column_name):
     dummies = pd.get_dummies(df[column_name],prefix=column_name)

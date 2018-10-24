@@ -194,6 +194,8 @@ class TodayWaitsPredicted(models.Model):
     rideid = models.ForeignKey(Ride, db_column = 'RideId', on_delete = models.SET_NULL, null = True)
     time = models.TextField(db_column = 'Time')
     predictedwait = models.IntegerField(db_column = 'PredictedWait')
+    confidencelow = models.IntegerField(db_column = 'ConfidenceLow')
+    confidencehigh = models.IntegerField(db_column = 'ConfidenceHigh')
 
     class Meta:
         managed = False

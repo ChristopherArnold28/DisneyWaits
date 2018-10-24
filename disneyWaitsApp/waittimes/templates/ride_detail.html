@@ -15,7 +15,8 @@
 {% if ride.todays_waits %}
 <div style = "margin-left:0px;margin-top:20px; width:55%;float:left">
   <div id = "chart_container"></div>
-  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
   <script>
     Highcharts.chart('chart_container', {{chart|safe}});
   </script>
