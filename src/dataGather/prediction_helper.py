@@ -133,7 +133,7 @@ def get_conf_interval(clf, df):
 
 
 
-def make_daily_prediction(current_ride,ride, time_list, best_params, todays_predictions):
+def make_daily_prediction(current_ride,ride, time_list, best_params, todays_predictions, todays_hours):
     ride_predictions = {}
     current_ride_fm = current_ride.copy()
     current_ride_fm = transformations.transformData(current_ride_fm)
@@ -151,6 +151,22 @@ def make_daily_prediction(current_ride,ride, time_list, best_params, todays_pred
     ride_starter = current_ride.iloc[[0]]
 
     predictions_frame = pd.concat([ride_starter]*len(time_list),ignore_index = True)
+    #need to change the park hours and date
+    current_park_id = predictions_frame['ParkId'][0]
+    todays_hours = park_hours[park_hours['ParkId'] == current_park_id]
+    todays_date = todays_hours['Date'].iloc[0]
+    park_open = todays_hours['ParkOpen'].iloc[0]
+    park_close = todays_hours['ParkClose'].iloc[0]
+    emh_open = todays_hours['EMHOpen'].iloc[0]
+    emh_close = todays_hours['EMHClose'].iloc[0]
+
+    predictions_frame['Date'] = todays_date
+    predictions_frame['EMHOpen'] = emh_open
+    predictions_frame['ParkOpen'] = park_open
+    predictions_frame['ParkClose'] = park_close
+    predictions_frame['EMHClose'] = emh_close
+
+
     predictions_frame['Time'] = time_list
     predictions_frame = transformations.transformData(predictions_frame)
     # print(predictions_frame)

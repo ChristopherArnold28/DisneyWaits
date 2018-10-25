@@ -14,6 +14,22 @@
       <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
       <p>{{ride.location}}</p>
       <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
+      {% recommend_ride ride as recommendation %}
+      {% if recommendation %}
+      <p>Recommendation:
+
+          {% if recommendation == "avoid" %}
+          <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
+          {% endif %}
+          {% if recommendation == "normal" %}
+          <span><strong>About what you'd expect, go ahead</strong></span>
+          {% endif %}
+          {% if recommendation == "recommended" %}
+          <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
+          {%endif %}
+
+      </p>
+     {% endif %}
     {% endfor %}
     <p> </p>
     <p> </p>
@@ -22,6 +38,22 @@
       <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
       <p>{{ride.location}}</p>
       <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
+      {% recommend_ride ride as recommendation %}
+      {% if recommendation %}
+      <p>Recommendation:
+
+          {% if recommendation == "avoid" %}
+          <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
+          {% endif %}
+          {% if recommendation == "normal" %}
+          <span><strong>About what you'd expect, go ahead</strong></span>
+          {% endif %}
+          {% if recommendation == "recommended" %}
+          <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
+          {%endif %}
+
+      </p>
+     {% endif %}
     {% endfor %}
   </div>
   <div class = "container" style = "width:45%;float:right">

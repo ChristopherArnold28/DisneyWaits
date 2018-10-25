@@ -105,6 +105,16 @@ class Ride(models.Model):
             return "No Information Regarding Fastpass"
         return fastpass
 
+
+    def current_time(self):
+        ride_waits_set = self.todaywaits_set.all()
+        #ride_waits_set = RideWaits.objects.filter(rideid = self.id).filter(date__gte = datetime.date.today())
+        if len(ride_waits_set) < 1:
+            return None
+        else:
+            current_ride_waits = ride_waits_set[len(ride_waits_set) - 1]
+            return current_ride_waits.time
+
     def current_wait(self):
         ride_waits_set = self.todaywaits_set.all()
         #ride_waits_set = RideWaits.objects.filter(rideid = self.id).filter(date__gte = datetime.date.today())

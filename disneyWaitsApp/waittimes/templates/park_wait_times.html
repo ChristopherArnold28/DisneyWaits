@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load tags %}
 {% block content %}
 <h2>All Wait Times in {{park.name}}</h2>
 {% for ride in rides_with_waits %}
@@ -11,6 +12,22 @@
     <strong style = "color:red">{{ride.current_status}}</strong>
     {% endif %}
   </p>
+  {% recommend_ride ride as recommendation %}
+  {% if recommendation %}
+  <p>Recommendation:
+
+      {% if recommendation == "avoid" %}
+      <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
+      {% endif %}
+      {% if recommendation == "normal" %}
+      <span><strong>About what you'd expect, go ahead</strong></span>
+      {% endif %}
+      {% if recommendation == "recommended" %}
+      <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
+      {%endif %}
+
+  </p>
+ {% endif %}
 {% endfor %}
 
 {% endblock %}

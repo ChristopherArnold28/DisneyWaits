@@ -12,6 +12,21 @@
   {% else %}
   <span style = "color:red;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}</hr>
   {% endif %}
+
+<!-- {% recommend_ride ride as recommendation %}
+{% if recommendation %}
+<hr>
+  {% if recommendation == "avoid" %}
+  <span>Avoid this ride for now </span><span class = "dot" style = "background-color:red;;height:25px;width:25px;display:inline-block;border-radius:50%;"></span>
+  {% endif %}
+  {% if recommendation == "normal" %}
+  <span>Wait within normal range </span>
+  {% endif %}
+  {% if recommendation == "recommended" %}
+  <span>Strongly Recommended to Ride at this time </span><span class = "dot" style = "background-color:green;height:25px;width:25px;display:inline-block;border-radius:50%;"></span>
+  {%endif %}
+</hr>
+{% endif %} -->
 {% if ride.todays_waits %}
 <div style = "margin-left:0px;margin-top:20px; width:55%;float:left">
   <div id = "chart_container"></div>
