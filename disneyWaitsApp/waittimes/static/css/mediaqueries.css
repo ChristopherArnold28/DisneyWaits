@@ -4,6 +4,31 @@
     height: 12.5%;
     width: 100%;
   }
+  #ride_wait_info {
+    width:100%;
+  }
+  #general_ride_info{
+    width: 100%
+  }
+  #longest_waits {
+    width:100%
+  }
+  #shortest_waits {
+    width:100%
+  }
+  #waits {
+    width:100%
+  }
+
+  #waits_list_park{
+
+  }
+  #park_general_info {
+    width:100%;
+    float:left;
+    margin-top: 50px
+  }
+
 }
 
 
@@ -12,5 +37,24 @@
   #park_list_items {
     width:50%;
     height:25%;
+  }
+  #ride_wait_info {
+    width:55%
+  }
+  #general_ride_info {
+    width: 40%
+  }
+  #longest_waits {
+    width:100%
+  }
+  #shortest_waits {
+    width:100%
+  }
+  #waits {
+    width: 40%
+  }
+  #park_general_info {
+    width:45%;
+    float:right;
   }
 }

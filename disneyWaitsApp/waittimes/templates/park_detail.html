@@ -8,76 +8,83 @@
 
   <p><strong>{{park.description}}</strong></p>
 </div>
-  <div style = "margin-left:10px;margin-top:20px; width:40%;float:left">
-    <h2>Longest Waits</h2>
-    {% for ride in top_waits %}
-      <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
-      <p>{{ride.location}}</p>
-      <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
-      {% recommend_ride ride as recommendation %}
-      {% if recommendation %}
-      <p>Recommendation:
+{%if park.get_todays_parks_hours %}
+<h5>Today's Park Hours: {% fix_time park.get_todays_parks_hours.parkopen %} - {% fix_time park.get_todays_parks_hours.parkclose %}</h4>
+{%if park.get_todays_parks_hours.emhopen != "None" %}
+  <h6>Extra Magic Hours: {% fix_time park.get_todays_parks_hours.emhopen%} - {% fix_time park.get_todays_parks_hours.emhclose%}</h4>
+{% endif %}
+{%if  park.get_todays_parks_hours.specialopen != "None" %}
+<h6>Special Ticketed Event Hours: {% fix_time park.get_todays_parks_hours.specialopen%} - {% fix_time park.get_todays_parks_hours.specialclose%}</h4>
+{% endif %}
+<hr style = "width:100%; height : 20px">
+{% endif %}
 
-          {% if recommendation == "avoid" %}
-          <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
-          {% endif %}
-          {% if recommendation == "normal" %}
-          <span><strong>About what you'd expect, go ahead</strong></span>
-          {% endif %}
-          {% if recommendation == "normalhigh" %}
-          <span><strong >A little higher than normal, but not much.</strong></span>
-          {% endif %}
-          {%if recommendation == "normallow" %}
-          <span><strong>A little lower than normal, you should go there</strong></span>
-          {%endif%}
-          {% if recommendation == "recommended" %}
-          <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
-          {%endif %}
+  <div id = "waits" style = "margin-left:10px;margin-top:20px;float:left">
+    <ul id = "waits_list_park" style = "list-style:none; padding-left:0px">
+      <li id = "longest_waits">
+        <h2>Longest Waits</h2>
+        {% for ride in top_waits %}
+          <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
+          <p>{{ride.location}}</p>
+          <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
+          {% recommend_ride ride as recommendation %}
+          {% if recommendation %}
+          <p>Recommendation:
 
-      </p>
-     {% endif %}
-    {% endfor %}
-    <p> </p>
-    <p> </p>
-    <h2>Shortest Waits</h2>
-    {% for ride in lowest_waits %}
-      <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
-      <p>{{ride.location}}</p>
-      <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
-      {% recommend_ride ride as recommendation %}
-      {% if recommendation %}
-      <p>Recommendation:
+              {% if recommendation == "avoid" %}
+              <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
+              {% endif %}
+              {% if recommendation == "normal" %}
+              <span><strong>About what you'd expect, go ahead</strong></span>
+              {% endif %}
+              {% if recommendation == "normalhigh" %}
+              <span><strong >A little higher than normal, but not much.</strong></span>
+              {% endif %}
+              {%if recommendation == "normallow" %}
+              <span><strong>A little lower than normal, you should go there</strong></span>
+              {%endif%}
+              {% if recommendation == "recommended" %}
+              <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
+              {%endif %}
 
-        {% if recommendation == "avoid" %}
-        <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
-        {% endif %}
-        {% if recommendation == "normal" %}
-        <span><strong>About what you'd expect, go ahead</strong></span>
-        {% endif %}
-        {% if recommendation == "normalhigh" %}
-        <span><strong >A little higher than normal, but not much.</strong></span>
-        {% endif %}
-        {%if recommendation == "normallow" %}
-        <span><strong>A little lower than normal, you should go there</strong></span>
-        {%endif%}
-        {% if recommendation == "recommended" %}
-        <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
-        {%endif %}
+          </p>
+         {% endif %}
+        {% endfor %}
+      </li>
+      <li id = "shortest_waits" style = "margin-top : 40px; ">
+        <h2>Shortest Waits</h2>
+        {% for ride in lowest_waits %}
+          <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
+          <p>{{ride.location}}</p>
+          <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
+          {% recommend_ride ride as recommendation %}
+          {% if recommendation %}
+          <p>Recommendation:
 
-      </p>
-     {% endif %}
-    {% endfor %}
+            {% if recommendation == "avoid" %}
+            <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
+            {% endif %}
+            {% if recommendation == "normal" %}
+            <span><strong>About what you'd expect, go ahead</strong></span>
+            {% endif %}
+            {% if recommendation == "normalhigh" %}
+            <span><strong >A little higher than normal, but not much.</strong></span>
+            {% endif %}
+            {%if recommendation == "normallow" %}
+            <span><strong>A little lower than normal, you should go there</strong></span>
+            {%endif%}
+            {% if recommendation == "recommended" %}
+            <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
+            {%endif %}
+
+          </p>
+         {% endif %}
+        {% endfor %}
+      </li>
+    </ul>
   </div>
-  <div class = "container" style = "width:45%;float:right">
-    {%if park.get_todays_parks_hours %}
-      <h5>Today's Park Hours: {% fix_time park.get_todays_parks_hours.parkopen %} - {% fix_time park.get_todays_parks_hours.parkclose %}</h4>
-      {%if park.get_todays_parks_hours.emhopen != "None" %}
-        <h6>Extra Magic Hours: {% fix_time park.get_todays_parks_hours.emhopen%} - {% fix_time park.get_todays_parks_hours.emhclose%}</h4>
-      {% endif %}
-      {%if  park.get_todays_parks_hours.specialopen != "None" %}
-      <h6>Special Ticketed Event Hours: {% fix_time park.get_todays_parks_hours.specialopen%} - {% fix_time park.get_todays_parks_hours.specialclose%}</h4>
-      {% endif %}
-    {% endif %}
+  <div id = "park_general_info" class = "container" style = "">
+
     <div>
       {% return_map_url park.name park.displayname as park_url %}
       <img src = {{park_url.url}}>

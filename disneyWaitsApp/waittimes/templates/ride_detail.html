@@ -36,7 +36,7 @@
 {% endif %}
 </hr>
 {% if ride.todays_waits %}
-<div style = "margin-left:0px;margin-top:20px; width:55%;float:left">
+<div id = "ride_wait_info" style = "margin-left:0px;margin-top:20px;float:left">
   <div id = "chart_container"></div>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -64,7 +64,7 @@
 </table>
 {% endif %}
 </div>
-<div class = "container" style = "width:40%;float:right; margin-top:20px">
+<div id = "general_ride_info" class = "container" style = "float:right; margin-top:20px">
   <h5><em>Opening Date: {{ride.openingdate}}</em></h5>
   <p>
     {% if ride.tier == "diversion" %}
