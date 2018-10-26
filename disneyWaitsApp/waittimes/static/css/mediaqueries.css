@@ -1,5 +1,7 @@
 @media screen and (min-width: 200px) {
-  #bottom_tag { visibility: hidden;}
+  #bottom_tag { visibility: visible;
+      height: 100px
+  }
   #park_list_items {
     height: 12.5%;
     width: 100%;
@@ -33,7 +35,8 @@
 
 
 @media screen and (min-width: 1400px) {
-  #bottom_tag {visibility: visible;}
+  #bottom_tag {visibility: visible;
+   height: 75px;}
   #park_list_items {
     width:50%;
     height:25%;
