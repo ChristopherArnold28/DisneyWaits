@@ -46,6 +46,8 @@ def transformData(RideWaits):
         parkClose = tempTime.replace(hour = pClose.hour, minute = pClose.minute, second = 0, microsecond = 0)
         if parkClose < parkOpen:
             parkClose = parkClose.replace(day = parkClose.day + 1)
+
+        #setup extra magic hours if there are any
         if (pd.notnull(row["EMHOpen"])) & (pd.notnull(row["EMHClose"])):
             eOpen = row["EMHOpen"]
             #print(eOpen)
@@ -66,8 +68,11 @@ def transformData(RideWaits):
             emhDay.append(0)
             magicHourType.append("None")
 
+        #setup special ticketed event? is this necessary so we can predict waits during the christmas party
+
+        
         #print(emh)
-        if (currentParkTime < parkClose) & (currentParkTime > parkOpen):
+        if (currentParkTime < parkClose) & (currentParkTime >= parkOpen):
             #print("Current Time is: " + str(currentParkTime) + " and ParkHours are "+ str(parkOpen) +" to " + str(parkClose) + " " +str(validtime))
             tSinceOpen = currentParkTime.hour - parkOpen.hour
             tSinceOpenMinutes = currentParkTime - parkOpen
@@ -80,7 +85,7 @@ def transformData(RideWaits):
             inEMH.append(0)
         else:
             if (emh == "ok"):
-                if (currentParkTime < emhClose) & (currentParkTime > emhOpen):
+                if (currentParkTime < emhClose) & (currentParkTime >= emhOpen):
                     validTime.append(1)
                     inEMH.append(1)
                     if (emhClose.hour == parkOpen.hour):
