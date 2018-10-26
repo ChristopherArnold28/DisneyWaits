@@ -8,25 +8,33 @@
 </p>
 <hr><strong>Status: </strong>
   {% if ride.current_status == "Operating" %}
-  <span style = "color:green;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}</hr>
+  <span style = "color:green;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}
   {% else %}
-  <span style = "color:red;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}</hr>
+  <span style = "color:red;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}
   {% endif %}
 
-<!-- {% recommend_ride ride as recommendation %}
+{% recommend_ride ride as recommendation %}
 {% if recommendation %}
-<hr>
+<p style = "margin-top: 10px">
+  <strong>Recommendation: </strong>
   {% if recommendation == "avoid" %}
-  <span>Avoid this ride for now </span><span class = "dot" style = "background-color:red;;height:25px;width:25px;display:inline-block;border-radius:50%;"></span>
+  <span><strong style = "color:red">Avoid this ride for now.</strong>  It is experiencing unusually high wait times. We suggest you come back later</span>
   {% endif %}
   {% if recommendation == "normal" %}
-  <span>Wait within normal range </span>
+  <span>The wait right now is within the anticipated range. It's your call. </span>
+  {% endif %}
+  {%if recommendation == "normallow" %}
+  <span>The wait is a little lower than expected. It's a good time to go.</span>
+  {% endif %}
+  {% if recommendation == "normalhigh" %}
+  <span>The wait is a little high than expected. Maybe wait a little while.</span>
   {% endif %}
   {% if recommendation == "recommended" %}
-  <span>Strongly Recommended to Ride at this time </span><span class = "dot" style = "background-color:green;height:25px;width:25px;display:inline-block;border-radius:50%;"></span>
+  <span><strong style = "color:green">GO NOW!</strong> It is experiencing unusually low waits. If you plan on riding this ride today, this isn't a bad time.</span>
   {%endif %}
+</p>
+{% endif %}
 </hr>
-{% endif %} -->
 {% if ride.todays_waits %}
 <div style = "margin-left:0px;margin-top:20px; width:55%;float:left">
   <div id = "chart_container"></div>

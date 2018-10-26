@@ -44,7 +44,7 @@ time_list = [x.time().strftime("%H:%M") for x in time_list]
 
 
 park_hours = pd.read_sql_query("select * from DisneyDB.ParkHours where Date = '" + str(date) + "'", conn)
-
+todays_hours = park_hours
 
 best_params = {'criterion': 'mse',
  'max_depth': 10,

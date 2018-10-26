@@ -1,12 +1,14 @@
 {% load bootstrap4 %}
 {% load tags %}
+{% load static %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
 {% block bootstrap4_content %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/mediaqueries.css' %}">
 <div class = "container" style = "background-color: rgba(148, 148, 148, 1)">
   <nav class = "navbar fixed-top navbar-dark bg-primary">
-    <a class = "navbar-brand" href = "{% url 'parks_list' %}">Disney Wait Times</a>
+    <a class = "navbar-brand" href = "{% url 'parks_list' %}">Disney Wait Times   {{window.screen.height}}</a>
   </nav>
   <div class = "card text-white bg-dark mb-3" style ="width:20%; float:left; left:0px; top:50px;height:100%; overflow:hidden; position:fixed">
     {% list_of_parks as parks %}
@@ -24,10 +26,11 @@
   </div>
 
 </div>
-<div  style = "float:right; width:100%;background: #42A5F5;color: white; line-height: 30px; height: 75px; bottom:0; align:center">
-  <p style = "position: absolute; right:50px;color:white">
+<div id = "bottom_tag" style = "float:right; width:80%;background: #42A5F5;color: white; line-height: 30px; height: 75px; bottom:0; align:center">
+  <p style = "text-align: right;color:white; margin-right:3%">
       All Names, Images, and Information of Attractions and Locations are property of Disney Parks and the Walt Disney Company<br/>
       Data gathered and displayed in accordance with <a style = "color:LightGray;" href = "https://disneytermsofuse.com/english/#section1">Disney Content and Software license</a> terms of use.
   </p>
 </div>
+
 {% endblock %}

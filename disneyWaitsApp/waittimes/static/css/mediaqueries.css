@@ -1,0 +1,16 @@
+@media screen and (min-width: 200px) {
+  #bottom_tag { visibility: hidden;}
+  #park_list_items {
+    height: 12.5%;
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 1400px) {
+  #bottom_tag {visibility: visible;}
+  #park_list_items {
+    width:50%;
+    height:25%;
+  }
+}

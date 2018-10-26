@@ -24,6 +24,12 @@
           {% if recommendation == "normal" %}
           <span><strong>About what you'd expect, go ahead</strong></span>
           {% endif %}
+          {% if recommendation == "normalhigh" %}
+          <span><strong >A little higher than normal, but not much.</strong></span>
+          {% endif %}
+          {%if recommendation == "normallow" %}
+          <span><strong>A little lower than normal, you should go there</strong></span>
+          {%endif%}
           {% if recommendation == "recommended" %}
           <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
           {%endif %}
@@ -42,15 +48,21 @@
       {% if recommendation %}
       <p>Recommendation:
 
-          {% if recommendation == "avoid" %}
-          <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
-          {% endif %}
-          {% if recommendation == "normal" %}
-          <span><strong>About what you'd expect, go ahead</strong></span>
-          {% endif %}
-          {% if recommendation == "recommended" %}
-          <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
-          {%endif %}
+        {% if recommendation == "avoid" %}
+        <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
+        {% endif %}
+        {% if recommendation == "normal" %}
+        <span><strong>About what you'd expect, go ahead</strong></span>
+        {% endif %}
+        {% if recommendation == "normalhigh" %}
+        <span><strong >A little higher than normal, but not much.</strong></span>
+        {% endif %}
+        {%if recommendation == "normallow" %}
+        <span><strong>A little lower than normal, you should go there</strong></span>
+        {%endif%}
+        {% if recommendation == "recommended" %}
+        <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
+        {%endif %}
 
       </p>
      {% endif %}
