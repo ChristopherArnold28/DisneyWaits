@@ -44,7 +44,7 @@ time_list = [x.time().strftime("%H:%M") for x in time_list]
 
 
 park_hours = pd.read_sql_query("select * from DisneyDB.ParkHours where Date = '" + str(date) + "'", conn)
-todays_hours = park_hours
+
 
 best_params = {'criterion': 'mse',
  'max_depth': 10,
@@ -67,7 +67,7 @@ for i in range(num_threads):
     ride = rides[i-1]
     current_ride = starter_data.copy()
     current_ride = starter_data[current_ride['Name'] == ride]
-    process = threading.Thread(target = prediction_helper.make_daily_prediction, args = [current_ride,ride,time_list, best_params, todays_predictions, todays_hours])
+    process = threading.Thread(target = prediction_helper.make_daily_prediction, args = [current_ride,ride,time_list, best_params, todays_predictions, park_hours])
     process.start()
     threads.append(process)
 
@@ -111,7 +111,7 @@ if len(rides_not_predicted) > 0:
         ride = rides[i-1]
         current_ride = starter_data.copy()
         current_ride = starter_data[current_ride['RideId'] == ride]
-        process = threading.Thread(target = prediction_helper.make_daily_prediction, args = [current_ride,ride,time_list, best_params, todays_predictions, todays_hours])
+        process = threading.Thread(target = prediction_helper.make_daily_prediction, args = [current_ride,ride,time_list, best_params, todays_predictions, park_hours])
         process.start()
         threads.append(process)
 
@@ -153,7 +153,7 @@ if len(rides_not_predicted) > 0:
         ride = rides[i-1]
         current_ride = starter_data.copy()
         current_ride = starter_data[current_ride['RideId'] == ride]
-        process = threading.Thread(target = prediction_helper.make_daily_prediction, args = [current_ride,ride,time_list, best_params, todays_predictions, todays_hours])
+        process = threading.Thread(target = prediction_helper.make_daily_prediction, args = [current_ride,ride,time_list, best_params, todays_predictions, park_hours])
         process.start()
         threads.append(process)
 

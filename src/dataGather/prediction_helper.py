@@ -133,7 +133,7 @@ def get_conf_interval(clf, df):
 
 
 
-def make_daily_prediction(current_ride,ride, time_list, best_params, todays_predictions, todays_hours):
+def make_daily_prediction(current_ride,ride, time_list, best_params, todays_predictions, park_hours):
     ride_predictions = {}
     current_ride_fm = current_ride.copy()
     current_ride_fm = transformations.transformData(current_ride_fm)
