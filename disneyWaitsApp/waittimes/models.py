@@ -8,6 +8,9 @@
 from django.db import models
 from datetime import datetime
 from pytz import timezone
+from django_pandas.io import read_frame
+import pandas as pd
+from .generic_functions import fix_time
 
 class Metrics(models.Model):
     id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.
@@ -148,6 +151,39 @@ class Ride(models.Model):
     def predicted_waits(self):
         predicted_set = self.todaywaitspredicted_set.all()
         return predicted_set
+
+    def get_best_times_to_go(self):
+        latest_time = self.current_time()
+        tempTime = datetime.now()
+        tempTime = tempTime.replace(minute = int(latest_time.split(":")[1]), hour = int(latest_time.split(":")[0]), second = 0, microsecond = 0)
+        predicted_set = self.predicted_waits()
+        today_predictions = read_frame(predicted_set)
+        today_predictions['time'] = pd.to_datetime(today_predictions['time'], infer_datetime_format = True)
+        remaining_predictions = today_predictions[today_predictions['time'] > tempTime]
+        shortest_wait = min(remaining_predictions['predictedwait'])
+        time_to_come_back = remaining_predictions[remaining_predictions['predictedwait'] == shortest_wait]['time']
+        time_to_come_back = time_to_come_back.iloc[0]
+        time_to_come_back = time_to_come_back.strftime("%I:%M %p")
+        time_to_come_back = fix_time(time_to_come_back)
+
+        return_times = {}
+
+        if remaining_predictions.shape[0] > 4:
+            next_hour = remaining_predictions.iloc[0:4]
+            shortest_in_next_hour = min(next_hour['predictedwait'])
+            time_next_hour = next_hour[next_hour['predictedwait'] == shortest_in_next_hour]['time']
+            time_next_hour = time_next_hour.iloc[0]
+            time_next_hour = time_next_hour.strftime("%I:%M %p")
+            time_next_hour = fix_time(time_next_hour)
+        else:
+            time_next_hour = None
+
+
+        return_times['nexthour'] = time_next_hour
+        return_times['nexthourwait'] = shortest_in_next_hour
+        return_times['remainingday'] = time_to_come_back
+        return_times['remainingdaylow'] = shortest_wait
+        return return_times
 
     class Meta:
         managed = False

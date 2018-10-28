@@ -18,7 +18,16 @@
 <p style = "margin-top: 10px">
   <strong>Recommendation: </strong>
   {% if recommendation == "avoid" %}
-  <span><strong style = "color:red">Avoid this ride for now.</strong>  It is experiencing unusually high wait times. We suggest you come back later</span>
+  <span><strong style = "color:red">Avoid this ride for now.</strong>  It is experiencing unusually high wait times.
+      {% if ride.get_best_times_to_go.nexthour %}
+      Come back at {{ride.get_best_times_to_go.nexthour}} for a shorter wait.
+        {% if ride.get_best_times_to_go.nexthour != ride.get_best_times_to_go.remainingday %}
+        You can also wait to come back at {{ride.get_best_times_to_go.remainingday}} for the lowest wait the rest of today.
+        {% endif %}
+      {% else %}
+        Come back at {{ride.get_best_times_to_go.remainingday}} for the lowest wait the rest of the day.
+      {% endif %}
+   </span>
   {% endif %}
   {% if recommendation == "normal" %}
   <span>The wait right now is within the anticipated range. It's your call. </span>
@@ -30,7 +39,13 @@
   <span>The wait is a little high than expected. Maybe wait a little while.</span>
   {% endif %}
   {% if recommendation == "recommended" %}
-  <span><strong style = "color:green">GO NOW!</strong> It is experiencing unusually low waits. If you plan on riding this ride today, this isn't a bad time.</span>
+  <span><strong style = "color:green">GO NOW!</strong> It is experiencing unusually low waits.
+     {% if ride.get_best_times_to_go.remainingdaylow > ride.current_wait %}
+     This is lower than the lowest anticipated wait for the rest of the day.
+     {% else %}
+     If you plan on riding this ride today, this isn't a bad time.
+     {% endif %}
+     </span>
   {%endif %}
 </p>
 {% endif %}
