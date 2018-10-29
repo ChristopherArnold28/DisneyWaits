@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+<br>
+<h1><strong>Register New User</strong></h1>
+<hr>
+<form method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form layout='inline' %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">
+       Register
+    </button>
+    {% endbuttons %}
+</form>
+{% endblock %}

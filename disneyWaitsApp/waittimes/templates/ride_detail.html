@@ -1,8 +1,28 @@
 {% extends 'base.html' %}
 {% load tags %}
 {% block content %}
+{% block javascript %}
+<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+  function update_favorites(rideid){
+    $.get('make_favorite/', function(data){});
 
-<h1>{{ride.name}}</h1>
+  }
+</script>
+{% endblock javascript %}
+
+<h1>{{ride.name}}
+  {% if current_user %}
+  {% if doesnt_follow %}
+  &emsp;&emsp;
+  {% csrf_token %}
+  <button type = "button" class = "btn btn-primary" onclick = "update_favorites({{ride.id}});">
+    Follow Ride
+  </button>
+  {% endif %}
+  {% endif %}
+</h1>
+
 <p>
 {{ride.description | safe}}
 </p>
@@ -43,7 +63,7 @@
      {% if ride.get_best_times_to_go.remainingdaylow > ride.current_wait %}
      This is lower than the lowest anticipated wait for the rest of the day.
      {% else %}
-     If you plan on riding this ride today, this isn't a bad time.
+     If you plan on riding this ride today, this isn't a bad time. Or come back for the lowest anticipated wait time today at {{ride.get_best_times_to_go.remainingday}}
      {% endif %}
      </span>
   {%endif %}

@@ -246,3 +246,11 @@ class TodayWaitsPredicted(models.Model):
     class Meta:
         managed = False
         db_table = 'Ride_Waits_Today_Predicted'
+
+
+class UserRideFavorite(models.Model):
+    userid = models.IntegerField(db_column = "UserId")
+    rideid = models.IntegerField(db_column = 'RideId')
+
+    class Meta:
+        db_table = 'User_Ride_Favorites'
