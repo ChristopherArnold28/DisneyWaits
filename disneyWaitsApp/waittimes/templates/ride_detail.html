@@ -6,19 +6,41 @@
 <script>
   function update_favorites(rideid){
     $.get('make_favorite/', function(data){});
+    document.getElementById("favorite_button").style.visibility = "hidden";
+    document.getElementById("unfavorite_button").style.visibility = "visible"
 
+  }
+
+  function remove_favorites(rideid){
+    $.get('remove_favorite/', function(data){});
+    document.getElementById("unfavorite_button").style.visibility = "hidden";
+    document.getElementById("favorite_button").style.visibility = "visible"
   }
 </script>
 {% endblock javascript %}
 
 <h1>{{ride.name}}
   {% if current_user %}
-  {% if doesnt_follow %}
   &emsp;&emsp;
+
   {% csrf_token %}
-  <button type = "button" class = "btn btn-primary" onclick = "update_favorites({{ride.id}});">
+  <button id = "favorite_button" type = "button" style ="right: 0;" class = "btn btn-primary" onclick = "update_favorites({{ride.id}});">
     Follow Ride
   </button>
+
+  <button id = "unfavorite_button" type = "button" style = "right:0"class = "btn btn-primary" onclick = "remove_favorites({{ride.id}});">
+    Unfollow Ride
+  </button>
+  {% if doesnt_follow %}
+  <script>
+  document.getElementById("unfavorite_button").style.visibility = "hidden";
+  document.getElementById("favorite_button").style.visibility = "visible"
+  </script>
+  {%else%}
+  <script>
+  document.getElementById("favorite_button").style.visibility = "hidden";
+  document.getElementById("unfavorite_button").style.visibility = "visible"
+  </script>
   {% endif %}
   {% endif %}
 </h1>

@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^park/(?P<park_id>[0-9]+)/all_wait_times/$',views.all_wait_times, name = 'all_attractions_with_waits'),
     url(r'^ride/(?P<ride_id>[0-9]+)/$', views.ride_detail, name = 'ride_detail'),
     url(r'^ride/(?P<ride_id>[0-9]+)/make_favorite/$', views.update_favorite,name = "update_favorite" ),
+    url(r'^ride/(?P<ride_id>[0-9]+)/remove_favorite/$', views.remove_favorites,name = "remove_favorite" ),
     url(r'^user/$', views.user_home_page, name = "user_home_page")
 ]

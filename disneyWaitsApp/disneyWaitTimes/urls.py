@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('waittimes/', include('waittimes.urls')),
     path('', RedirectView.as_view(url = '/waittimes/')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('registration.backends.simple.urls'))
 ]
