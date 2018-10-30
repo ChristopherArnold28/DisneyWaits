@@ -6,16 +6,15 @@
 <script>
   function update_favorites(rideid){
     $.get('make_favorite/', function(data){});
-    document.getElementById("favorite_button").style.visibility = "hidden";
-    document.getElementById("unfavorite_button").style.visibility = "visible"
+
+    if (document.getElementById("favorite_button").innerText == "Follow Ride"){
+      document.getElementById("favorite_button").innerText = "Unfollow Ride";
+    }else{
+        document.getElementById("favorite_button").innerText = "Follow Ride";
+    }
 
   }
 
-  function remove_favorites(rideid){
-    $.get('remove_favorite/', function(data){});
-    document.getElementById("unfavorite_button").style.visibility = "hidden";
-    document.getElementById("favorite_button").style.visibility = "visible"
-  }
 </script>
 {% endblock javascript %}
 
@@ -25,21 +24,19 @@
 
   {% csrf_token %}
   <button id = "favorite_button" type = "button" style ="right: 0;" class = "btn btn-primary" onclick = "update_favorites({{ride.id}});">
-    Follow Ride
+    Empty
   </button>
 
-  <button id = "unfavorite_button" type = "button" style = "right:0"class = "btn btn-primary" onclick = "remove_favorites({{ride.id}});">
+  <!-- <button id = "unfavorite_button" type = "button" style = "right:0"class = "btn btn-primary" onclick = "remove_favorites({{ride.id}});">
     Unfollow Ride
-  </button>
+  </button> -->
   {% if doesnt_follow %}
   <script>
-  document.getElementById("unfavorite_button").style.visibility = "hidden";
-  document.getElementById("favorite_button").style.visibility = "visible"
+  document.getElementById("favorite_button").innerText = "Follow Ride";
   </script>
   {%else%}
   <script>
-  document.getElementById("favorite_button").style.visibility = "hidden";
-  document.getElementById("unfavorite_button").style.visibility = "visible"
+  document.getElementById("favorite_button").innerText = "Unfollow Ride";
   </script>
   {% endif %}
   {% endif %}
