@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+PHONENUMBER_DEFAULT_REGION = 'US'
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'waittimes',
     'bootstrap4',
-    'registration'
+    'registration',
+    'phonenumber_field'
 ]
 
 MIDDLEWARE = [

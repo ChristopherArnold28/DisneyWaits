@@ -11,6 +11,8 @@ from pytz import timezone
 from django_pandas.io import read_frame
 import pandas as pd
 from .generic_functions import fix_time
+from phonenumber_field.modelfields import PhoneNumberField
+
 
 class Metrics(models.Model):
     id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.
@@ -254,3 +256,13 @@ class UserRideFavorite(models.Model):
 
     class Meta:
         db_table = 'User_Ride_Favorites'
+
+class UserNotifications(models.Model):
+    userid = models.IntegerField(db_column = "UserId")
+    phonenumber = PhoneNumberField(db_column = "PhoneNumber")
+    rideid = models.IntegerField(db_column = "RideId")
+    datestart = models.DateField(db_column = "DateStart")
+    dateend = models.DateField(db_column = "DateEnd")
+
+    class Meta:
+        db_table = "User_Notifications"

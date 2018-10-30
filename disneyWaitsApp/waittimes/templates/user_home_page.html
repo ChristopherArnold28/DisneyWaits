@@ -9,6 +9,15 @@
 {% for ride in rides %}
   <hr>
   <strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong>
+  {% check_notifications ride.id current_user_id as notifications_list %}
+  {% if notifications_list %}
+  {% else %}
+  <div style = "width:20%; float: right; margin-top:10px">
+    <a href= "{% url 'add_notifications' ride.id %}"><button type = "button" class = "btn btn-primary">
+      Add notifications
+    </button></a>
+  </div>
+  {% endif %}
   <p>{{ride.location}}</p>
   <p>Current Wait Time:
     {% if ride.current_status == "Operating" %}
@@ -38,6 +47,11 @@
     {%endif %}
 
   </p>
+  {% endif %}
+  {% if notifications_list %}
+    {% for notification in notifications_list %}
+    <p>Notifications Sent To {{notification.phonenumber}} from {{notification.datestart}} to {{notification.dateend}}</p>
+    {% endfor %}
   {% endif %}
 {% endfor %}
 {% else %}
