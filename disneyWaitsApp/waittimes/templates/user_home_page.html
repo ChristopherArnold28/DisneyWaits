@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load tags %}
-<h1>{{current_user_name}} home page!</h1>
+<h1>{{full_name}}'s home page!</h1>
 <br>
 <br>
 {% if rides %}
@@ -11,6 +11,11 @@
   <strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong>
   {% check_notifications ride.id current_user_id as notifications_list %}
   {% if notifications_list %}
+  <div style = "width:20%; float: right; margin-top:10px">
+    <a href= "{% url 'remove_notifications' ride.id %}"><button type = "button" class = "btn btn-primary">
+      Remove Notification
+    </button></a>
+  </div>
   {% else %}
   <div style = "width:20%; float: right; margin-top:10px">
     <a href= "{% url 'add_notifications' ride.id %}"><button type = "button" class = "btn btn-primary">
@@ -50,7 +55,7 @@
   {% endif %}
   {% if notifications_list %}
     {% for notification in notifications_list %}
-    <p>Notifications Sent To {{notification.phonenumber}} from {{notification.datestart}} to {{notification.dateend}}</p>
+    <p>Notifications Sent To <b>{% fix_phone_number notification.phonenumber%}</b> from <b>{{notification.datestart}}</b> to <b>{{notification.dateend}}</b></p>
     {% endfor %}
   {% endif %}
 {% endfor %}
