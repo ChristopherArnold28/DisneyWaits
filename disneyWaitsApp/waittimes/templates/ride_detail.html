@@ -17,8 +17,10 @@
 
 </script>
 {% endblock javascript %}
-
-<h1>{{ride.name}}
+<div style ="width:80%; float:left">
+  <h1>{{ride.name}}</h1>
+</div>
+<div style = "width:20%; float: right; margin-top:10px">
   {% if current_user %}
   &emsp;&emsp;
 
@@ -40,12 +42,17 @@
   </script>
   {% endif %}
   {% endif %}
-</h1>
-
+</div>
+<div style = "width : 100%; float:left">
 <p>
+<br>
 {{ride.description | safe}}
 </p>
-<hr><strong>Status: </strong>
+<hr>
+</div>
+<div style = "width:100%; float:left">
+
+<strong>Status: </strong>
   {% if ride.current_status == "Operating" %}
   <span style = "color:green;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}
   {% else %}
@@ -88,7 +95,7 @@
   {%endif %}
 </p>
 {% endif %}
-</hr>
+</div>
 {% if ride.todays_waits %}
 <div id = "ride_wait_info" style = "margin-left:0px;margin-top:20px;float:left">
   <div id = "chart_container"></div>

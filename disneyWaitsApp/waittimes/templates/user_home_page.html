@@ -1,6 +1,47 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load tags %}
 <h1>{{current_user_name}} home page!</h1>
+<br>
+<br>
+{% if rides %}
+<h2>Followed Rides</h2>
+{% for ride in rides %}
+  <hr>
+  <strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong>
+  <p>{{ride.location}}</p>
+  <p>Current Wait Time:
+    {% if ride.current_status == "Operating" %}
+    <strong>{{ride.current_wait}}</strong>
+    {% else %}
+    <strong style = "color:red">{{ride.current_status}}</strong>
+    {% endif %}
+  </p>
+  {% recommend_ride ride as recommendation %}
+  {% if recommendation %}
+  <p>Recommendation:
 
+    {% if recommendation == "avoid" %}
+    <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
+    {% endif %}
+    {% if recommendation == "normal" %}
+    <span><strong>About what you'd expect, go ahead</strong></span>
+    {% endif %}
+    {% if recommendation == "normalhigh" %}
+    <span><strong >A little higher than normal, but not much.</strong></span>
+    {% endif %}
+    {%if recommendation == "normallow" %}
+    <span><strong>A little lower than normal, you should go there</strong></span>
+    {%endif%}
+    {% if recommendation == "recommended" %}
+    <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
+    {%endif %}
+
+  </p>
+  {% endif %}
+{% endfor %}
+{% else %}
+<h3>You are not following any rides</h3>
+{% endif %}
 
 {% endblock %}
