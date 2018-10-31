@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'full_base.html' %}
 {% load tags %}
-{% block content %}
+{% block main_content %}
 <h2>All Wait Times in {{park.name}}</h2>
 {% for ride in rides_with_waits %}
   <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
