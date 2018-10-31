@@ -12,7 +12,17 @@ from django_pandas.io import read_frame
 import pandas as pd
 from .generic_functions import fix_time
 from phonenumber_field.modelfields import PhoneNumberField
+from django.contrib.auth.models import AbstractUser
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+from django.contrib.auth.models import User
 
+class UserPhonenumber(models.Model):
+    userid = models.IntegerField(db_column = "UserId")
+    phonenumber = PhoneNumberField(db_column = "PhoneNumber")
+
+    class Meta:
+        db_table = "User_Phonenumber"
 
 class Metrics(models.Model):
     id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.

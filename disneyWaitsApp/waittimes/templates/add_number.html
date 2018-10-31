@@ -1,0 +1,13 @@
+{% extends 'full_base.html' %}
+
+{%block main_content %}
+  <br>
+  <h1> Add Phone Number on File </h1>
+  <hr>
+  <br>
+  <form method = "POST" class = "post-form">
+    {%csrf_token %}
+    {{form.as_p}}
+    <button type = "submit" class = "btn btn-primary">Save Notification</save>
+  </form>
+{% endblock %}

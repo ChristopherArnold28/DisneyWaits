@@ -3,6 +3,18 @@
 {% load tags %}
 <br>
 <h1>{{full_name}}'s home page!</h1>
+{% if phone_number %}
+  {% for number in phone_number %}
+  <h3>Registered Number: {% fix_phone_number number.phonenumber%}</h3>
+  {% endfor %}
+{% else %}
+<div>
+  <a href= "{% url 'add_number'%}"><button type = "button" class = "btn btn-primary">
+    Register Number Before Adding Notifications
+  </button></a>
+</div>
+{% endif %}
+
 <br>
 <br>
 {% if rides %}
@@ -18,11 +30,19 @@
     </button></a>
   </div>
   {% else %}
+  {% if phone_number %}
   <div style = "width:20%; float: right; margin-top:10px">
     <a href= "{% url 'add_notifications' ride.id %}"><button type = "button" class = "btn btn-primary">
       Add notifications
     </button></a>
   </div>
+  {% else %}
+  <div style = "width:20%; float: right; margin-top:10px">
+    <a href= "{% url 'add_number'%}"><button type = "button" class = "btn btn-primary">
+      Register Number Before Adding Notifications
+    </button></a>
+  </div>
+  {% endif %}
   {% endif %}
   <p>{{ride.location}}</p>
   <p>Current Wait Time:
