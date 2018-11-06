@@ -242,6 +242,7 @@ Meet Doc McStuffins in Conservation Station:18588660
 Friends of JoJo's Circus at Animation Courtyard:217779
 Citizens of Hollywood:242220
 For the First Time in Forever: A Frozen Sing-Along Celebration:17945033
+For the First Time in Forever: A Frozen Sing-Along Celebration Winter:17842841
 Meet Chewbacca at Star Wars Launch Bay:18237385
 Event - Meet Members of the Rebel Alliance near Star Tours:17434397
 Jedi Training: Trials of the Temple:18243995
@@ -255,6 +256,7 @@ BB-8 Astromech on Duty:18669338
 Meet Cruz Ramirez on Pixar Place:18693117
 Disney Movie Magic:18693119
 Fantasmic!:401483
+Fantasmic! Winter:80010887
 Meet The Incredibles at The Magic of Disney Animation:11953
 Limited Time Magic - Dad's Incredible:17464304
 #INCREDIBLESSuperDanceParty:17533730
@@ -1150,3 +1152,7 @@ Meet Rey at Star Wars Launch Bay:19011420
 Heroic Encounter: Captain America:19021637
 Meet Pixar Pals at Pixar Pier:19052131
 Meet Vampirina in Hollywood Land:19089398
+Groovin Alps:18923661
+Boyz II Men:19052211
+Meet Chip and Dale on Grad Ave:19095280
+Voyage of The Little Mermaid:80010896

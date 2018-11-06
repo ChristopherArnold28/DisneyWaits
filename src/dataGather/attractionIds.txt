@@ -43,10 +43,12 @@ Topiary - Classic Disney Couples:17267023
 Topiary - Peter Pan, Captain Hook and Tick Tock Croc:17267024
 Topiary - Snow White and the Seven Dwarfs:17267025
 Topiary - Simba and friends:17267026
+Garden - Extraordinary Orchids Winter:17267027
 Garden - Extraordinary Orchids:18052968
 Play Area - Mike and Sulley's Monstrous Garden:17267028
 Topiary - Belle and Beast:17267029
 Garden - English Tea Garden Presented by Twinings of London:18052971
+Garden - English Tea Garden Presented by Twinings of London Winter:17267030
 Topiary - Pandas Topiary:17267031
 Topiary - Disney-Pixar Woody & Lotso Topiary:17267032
 Topiary - Lady and the Tramp:17267033
@@ -125,7 +127,7 @@ Take-Along Olaf:17844222
 Star Wars - Rebels - The Ultimate Guide:18115367
 "Frozen Fever" Short Film:18120858
 Star Wars Launch Bay:18237343
-Star Wars - Path of the Jedi:18243993
+Star Wars - Path of the Jedi:18240966
 Star Wars at Walt Disney World Resort:18263038
 Star Wars Photo Opportunities:18276132
 Star Wars Launch Bay Theater:18360041
@@ -375,3 +377,7 @@ Peter Pan's Flight:353399
 Pirates of the Caribbean:353405
 Space Mountain Ghost Galaxy:353435
 "it's a small world":367492
+Topiary - Winnie the Pooh Winter:17267020
+Disney "The Nutcracker and the Four Realms" Sneak Peek:19101114
+Disney "Ralph Breaks the Internet" Sneak Peek:19136941
+Pixar Pal-A-Round:19009994
