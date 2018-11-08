@@ -14,18 +14,47 @@
     }
 
   }
+  function get_directions(ride_lat, ride_lng){
+    var ride_latitude
+    var ride_longitude
+    var pass_string
 
+    var x = document.getElementById("go_to_ride_button")
+    if (navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position){
+        buildString(position, ride_lat, ride_lng);});
+
+    }
+    else{
+      document.getElementById("go_to_ride_button").innerText = "unable to find coords";
+    }
+
+  }
+
+  function buildString(position, ride_lat,ride_lng){
+    test_string = "28.418432,-81.5802548"
+    pass_string = position.coords.latitude + "," + position.coords.longitude;
+    // html_string = "navigate/" + pass_string + "/";
+    html_string = "https://www.google.com/maps/dir/" + "'"+test_string+"'/'" + ride_lat+","+ride_lng+"'/";
+
+    // current_location = window.location.href;
+    // new_location = current_location + html_string;
+    new_location = html_string;
+
+    // $.get(html_string,function(data){})
+    window.location = new_location;
+  }
 </script>
 {% endblock javascript %}
-<div style ="width:80%; float:left">
+<div style ="width:65%; float:left">
   <h1>{{ride.name}}</h1>
 </div>
-<div style = "width:20%; float: right; margin-top:10px">
+<div style = "width:35%; float: right; margin-top:10px">
   {% if current_user %}
   &emsp;&emsp;
 
   {% csrf_token %}
-  <button id = "favorite_button" type = "button" style ="right: 0;" class = "btn btn-primary" onclick = "update_favorites({{ride.id}});">
+  <button id = "favorite_button" type = "button"  class = "btn btn-primary" onclick = "update_favorites({{ride.id}});">
     Empty
   </button>
 
@@ -41,6 +70,12 @@
   document.getElementById("favorite_button").innerText = "Unfollow Ride";
   </script>
   {% endif %}
+  &emsp;&emsp;
+
+  {% csrf_token %}
+  <button id = "go_to_ride_button" type = "button" style ="right: 0;" class = "btn btn-primary" onclick = "get_directions({{ride.latitude}},{{ride.longitude}});">
+    Go To Ride
+  </button>
   {% endif %}
 </div>
 <div style = "width : 100%; float:left">
