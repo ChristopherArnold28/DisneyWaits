@@ -17,3 +17,7 @@ def fix_time(time_string):
         time_string = str(int(first_half)) + ":" + second_half + " AM"
 
     return time_string
+
+
+def get_directions(user_lat, user_long, ride_lat, ride_long):
+    """returns a google maps directions object"""
