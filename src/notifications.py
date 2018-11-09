@@ -80,11 +80,13 @@ for user in users_list:
             continue
 
         name = get_name['Name'].iloc[0]
+        ride_lat = get_name['Latitude'].iloc[0]
+        ride_lng = get_name['Longitude'].iloc[0]
         waits_query = "select * from DisneyDB.Ride_Waits_Today rwt join DisneyDB.Ride_Waits_Today_Predicted rwtp on rwt.RideId = rwtp.RideId and LEFT(rwt.Time,4) = LEFT(rwtp.Time,4) where rwt.RideId =" + str(ride)
         waits = pd.read_sql_query(waits_query, conn)
         current_time = waits.iloc[waits.shape[0]-1]
         if current_time['Wait'] < current_time['ConfidenceLow']:
-            message = "Wait for " + name + " Much lower than expected! GO NOW for "+ str(current_time['Wait']) +" minute wait - Your friendly Disney Waits Notification!"
+            message = "Wait for " + name + " Much lower than expected! GO NOW for "+ str(current_time['Wait']) +" minute wait. To navigate now go here: https://www.google.com/maps/dir//" + str(ride_lat) + ","+str(ride_lng) + "/ - Your friendly Disney Waits Notification!"
             account_sid = config.twilio_account_num
             auth_token = config.twilio_auth_token
             client = Client(account_sid, auth_token)
