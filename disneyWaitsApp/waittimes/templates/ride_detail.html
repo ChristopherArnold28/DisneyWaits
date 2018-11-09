@@ -32,14 +32,19 @@
   }
 
   function buildString(position, ride_lat,ride_lng){
-    test_string = "28.418432,-81.5802548"
+    var x = window.matchMedia("(max-width:1000px)")
     pass_string = position.coords.latitude + "," + position.coords.longitude;
-    html_string = "navigate/" + pass_string + "/";
-    // html_string = "https://www.google.com/maps/dir/" + "'"+test_string+"'/'" + ride_lat+","+ride_lng+"'/";
+    // test_string = "28.418432,-81.5802548"
+    if (x.matches){
+        html_string = "https://www.google.com/maps/dir/" + "'"+pass_string+"'/'" + ride_lat+","+ride_lng+"'/";
+        new_location = html_string;
+    }else {
+        html_string = "navigate/" + pass_string + "/";
+        current_location = window.location.href;
+        new_location = current_location + html_string;
 
-    current_location = window.location.href;
-    new_location = current_location + html_string;
-    // new_location = html_string;
+    }
+
 
     // $.get(html_string,function(data){})
     window.location = new_location;
