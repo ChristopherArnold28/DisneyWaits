@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,14 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '**************'
+SECRET_KEY = config.secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 PHONENUMBER_DEFAULT_REGION = 'US'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
     'modelcluster',
     'django_social_share',
     'puput',
+    'wagtailmarkdown'
 ]
 
 MIDDLEWARE = [
@@ -100,15 +102,14 @@ WSGI_APPLICATION = 'disneyWaitTimes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'HOST': "****************",
-        'ENGINE': '********************',
-        'NAME': "*******************",
-        'PORT': '**************',
-        'USER': "****************",
-        'PASSWORD':"*******************"
+        'HOST': config.host,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config.dbname,
+        'PORT': str(config.port),
+        'USER': config.username,
+        'PASSWORD':config.password
     }
 }
-
 
 
 # Password validation
@@ -128,6 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 LOGIN_REDIRECT_URL = '/waittimes/user'
 

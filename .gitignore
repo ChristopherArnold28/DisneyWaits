@@ -5,3 +5,4 @@ src/dataGather/results.txt
 *.tcl
 src/django_environment/*
 src/.ipynb_checkpoints/NotificationsTester-checkpoint.ipynb
+disneyWaitsApp/config.py

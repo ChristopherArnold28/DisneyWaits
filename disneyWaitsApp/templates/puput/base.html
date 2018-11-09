@@ -10,7 +10,7 @@
         {% endblock title %}
     </title>
     <meta charset="utf-8"/>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"/> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=.375"/> -->
     <meta name="title"
           content="{% block meta_title %}
                         {% if blog_page.seo_title %}
@@ -43,8 +43,8 @@
 <body>
 <br>
 <br>
-{% block blog_header %}
-    <!-- <div class="about">
+<!-- {% block blog_header %}
+    <div class="about">
         {% if blog_page.header_image %}
             <span class="image featured">
                 {% image blog_page.header_image fill-1500x120 as header_image %}
@@ -61,8 +61,8 @@
                 {% endif %}
             </section>
         </div>
-    </div> -->
-{% endblock blog_header %}
+    </div>
+{% endblock blog_header %} -->
 {% wagtailuserbar %}
 <div class="container container-blog">
     <div class="row">
