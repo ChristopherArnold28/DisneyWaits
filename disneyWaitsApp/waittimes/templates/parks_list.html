@@ -8,7 +8,7 @@
 
 <ul>
   {% for park in park_list %}
-  <li id = "park_list_items" style = "border: 5px solid #FFF;padding: 5px;display:block;float:left;background-image:linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)), url({{park.imageurl}});background-size:100%;background-position:left center; background-repeat:no-repeat">
+  <li id = "park_list_items" style = "border: 5px solid #FFF;padding: 5px;display:block;float:left;background-image:linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)), url({% static park.imageloc %});background-size:100%;background-position:left center; background-repeat:no-repeat">
     <h2><a style = "color:Black; font-family :'WaltographRegular';font-weight:normal;font-style:normal" href = "{% url 'park_detail' park.id %}">{{park.displayname}}</a></h2>
   {%if park.get_todays_parks_hours %}
     <h5>Today's Park Hours: {% fix_time park.get_todays_parks_hours.parkopen %} - {% fix_time park.get_todays_parks_hours.parkclose %}</h5>

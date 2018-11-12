@@ -1,8 +1,9 @@
 {% extends 'full_base.html' %}
 {% load tags %}
+{% load static %}
 
 {% block main_content %}
-<div class = "jumbotron" style ="background-image:linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)), url({{park.bannerurl}});background-size:100%;background-position:left center; background-repeat:no-repeat">
+<div class = "jumbotron" style ="background-image:linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)), url({% static park.bannerimageloc %});background-size:100%;background-position:left center; background-repeat:no-repeat">
 <h1>{{park.displayname}}</h1>
 <h3><em>Opening Date: {{park.openingdate}}</em></h3>
 

@@ -44,6 +44,9 @@ class Park(models.Model):
     imageurl = models.TextField(db_column = "ImageUrl")
     description = models.TextField(db_column = "Description")
     bannerurl = models.TextField(db_column = "BannerImageUrl")
+    imageloc = models.TextField(db_column = "ImageLoc")
+    bannerimageloc = models.TextField(db_column = "BannerImageLoc")
+
     if (id == 10) or (id == 11):
         tz = timezone('US/Pacific')
     else:

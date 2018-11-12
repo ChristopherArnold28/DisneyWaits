@@ -16,6 +16,8 @@ import requests
 import config
 # Create your views here.
 
+def terms_of_use(request):
+    return render(request, 'terms_of_use.html')
 
 def parks_list(request):
     park_list = Park.objects.all()

@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^user/$', views.user_home_page, name = "user_home_page"),
     url(r'^user/(?P<ride_id>[0-9]+)/add_notifications/$', views.add_notifications, name = 'add_notifications'),
     url(r'^user/(?P<ride_id>[0-9]+)/remove_notification/$', views.remove_notification, name = 'remove_notifications'),
-    url(r'^user/add_number/$', views.add_phonenumber, name = 'add_number')
+    url(r'^user/add_number/$', views.add_phonenumber, name = 'add_number'),
+    url(r'^terms_of_use/', views.terms_of_use, name = 'terms_of_use')
 ]
