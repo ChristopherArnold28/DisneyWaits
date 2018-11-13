@@ -58,9 +58,15 @@ INSTALLED_APPS = [
     'taggit',
     'modelcluster',
     'django_social_share',
-    'puput',
-    'wagtailmarkdown'
+    'puput'
 ]
+
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config.email_user
+EMAIL_HOST_PASSWORD = config.email_user_password
+EMAIL_USE_TLS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
