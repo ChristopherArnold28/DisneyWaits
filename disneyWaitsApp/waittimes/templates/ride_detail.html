@@ -101,6 +101,8 @@
 
 {% recommend_ride ride as recommendation %}
 {% if recommendation %}
+{% if recommendation == "No Prediction" %}
+{% else %}
 <p style = "margin-top: 10px">
   <strong>Recommendation: </strong>
   {% if recommendation == "avoid" %}
@@ -122,7 +124,7 @@
   <span>The wait is a little lower than expected. It's a good time to go.</span>
   {% endif %}
   {% if recommendation == "normalhigh" %}
-  <span>The wait is a little high than expected. Maybe wait a little while.</span>
+  <span>The wait is a little higher than expected. Maybe wait a little while.</span>
   {% endif %}
   {% if recommendation == "recommended" %}
   <span><strong style = "color:green">GO NOW!</strong> It is experiencing unusually low waits.
@@ -135,6 +137,7 @@
   {%endif %}
 </p>
 {% endif %}
+{% endif %}
 </div>
 {% if ride.todays_waits %}
 <div id = "ride_wait_info" style = "margin-left:0px;margin-top:20px;float:left">
@@ -144,7 +147,7 @@
   <script>
     Highcharts.chart('chart_container', {{chart|safe}});
   </script>
-<hr><h3><strong>Latest Wait Times</strong></h3></hr>
+<hr><h3><strong>Latest Wait Times</strong></h3>
 <table class = "table">
   <thead class = "thead-dark">
     <tr>

@@ -1,121 +1,198 @@
 {% extends 'full_base.html' %}
 {% load tags %}
-{% load static %}
-
 {% block main_content %}
-<div class = "jumbotron" style ="background-image:linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)), url({% static park.bannerimageloc %});background-size:100%;background-position:left center; background-repeat:no-repeat">
-<h1>{{park.displayname}}</h1>
-<h3><em>Opening Date: {{park.openingdate}}</em></h3>
+{% block javascript %}
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+  function update_favorites(rideid){
+    $.get('make_favorite/', function(data){});
 
-  <p><strong>{{park.description}}</strong></p>
+    if (document.getElementById("favorite_button").innerText == "Follow Ride"){
+      document.getElementById("favorite_button").innerText = "Unfollow Ride";
+    }else{
+        document.getElementById("favorite_button").innerText = "Follow Ride";
+    }
+
+  }
+  function get_directions(ride_lat, ride_lng){
+    var ride_latitude
+    var ride_longitude
+    var pass_string
+
+    var x = document.getElementById("go_to_ride_button")
+    if (navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position){
+        buildString(position, ride_lat, ride_lng);});
+
+    }
+    else{
+      document.getElementById("go_to_ride_button").innerText = "unable to find coords";
+    }
+
+  }
+
+  function buildString(position, ride_lat,ride_lng){
+    var x = window.matchMedia("(max-width:1000px)")
+    pass_string = position.coords.latitude + "," + position.coords.longitude;
+    // test_string = "28.418432,-81.5802548"
+    if (x.matches){
+        html_string = "https://www.google.com/maps/dir/" + "'"+pass_string+"'/'" + ride_lat+","+ride_lng+"'/";
+        new_location = html_string;
+    }else {
+        html_string = "navigate/" + pass_string + "/";
+        current_location = window.location.href;
+        new_location = current_location + html_string;
+
+    }
+
+
+    // $.get(html_string,function(data){})
+    window.location = new_location;
+  }
+</script>
+{% endblock javascript %}
+<div style ="width:65%; float:left">
+  <h1>{{ride.name}}</h1>
 </div>
-{%if park.get_todays_parks_hours %}
-<h5>Today's Park Hours: {% fix_time park.get_todays_parks_hours.parkopen %} - {% fix_time park.get_todays_parks_hours.parkclose %}</h4>
-{%if park.get_todays_parks_hours.emhopen != "None" %}
-  <h6>Extra Magic Hours: {% fix_time park.get_todays_parks_hours.emhopen%} - {% fix_time park.get_todays_parks_hours.emhclose%}</h4>
+<div style = "width:35%; float: right; margin-top:10px">
+  {% if current_user %}
+  &emsp;&emsp;
+
+  {% csrf_token %}
+  <button id = "favorite_button" type = "button"  class = "btn btn-primary" onclick = "update_favorites({{ride.id}});">
+    Empty
+  </button>
+
+  <!-- <button id = "unfavorite_button" type = "button" style = "right:0"class = "btn btn-primary" onclick = "remove_favorites({{ride.id}});">
+    Unfollow Ride
+  </button> -->
+  {% if doesnt_follow %}
+  <script>
+  document.getElementById("favorite_button").innerText = "Follow Ride";
+  </script>
+  {%else%}
+  <script>
+  document.getElementById("favorite_button").innerText = "Unfollow Ride";
+  </script>
+  {% endif %}
+  &emsp;&emsp;
+
+  {% csrf_token %}
+  <button id = "go_to_ride_button" type = "button" style ="right: 0;" class = "btn btn-primary" onclick = "get_directions({{ride.latitude}},{{ride.longitude}});">
+    Go To Ride
+  </button>
+  {% endif %}
+</div>
+<div style = "width : 100%; float:left">
+<p>
+<br>
+{{ride.description | safe}}
+</p>
+<hr>
+</div>
+<div style = "width:100%; float:left">
+
+<strong>Status: </strong>
+  {% if ride.current_status == "Operating" %}
+  <span style = "color:green;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}
+  {% else %}
+  <span style = "color:red;font-weight:bold">{{ride.current_status}}</span>   &emsp;&emsp;&emsp;  <strong>Fastpass: </strong>{{ride.current_fastpass}}
+  {% endif %}
+
+{% recommend_ride ride as recommendation %}
+{% if recommendation %}
+{% if recommendation == "No Prediction" %}
+{% else %}
+<p style = "margin-top: 10px">
+  <strong>Recommendation: </strong>
+  {% if recommendation == "avoid" %}
+  <span><strong style = "color:red">Avoid this ride for now.</strong>  It is experiencing unusually high wait times.
+      {% if ride.get_best_times_to_go.nexthour %}
+      Come back at {{ride.get_best_times_to_go.nexthour}} for a shorter wait.
+        {% if ride.get_best_times_to_go.nexthour != ride.get_best_times_to_go.remainingday %}
+        You can also wait to come back at {{ride.get_best_times_to_go.remainingday}} for the lowest wait the rest of today.
+        {% endif %}
+      {% else %}
+        Come back at {{ride.get_best_times_to_go.remainingday}} for the lowest wait the rest of the day.
+      {% endif %}
+   </span>
+  {% endif %}
+  {% if recommendation == "normal" %}
+  <span>The wait right now is within the anticipated range. It's your call. </span>
+  {% endif %}
+  {%if recommendation == "normallow" %}
+  <span>The wait is a little lower than expected. It's a good time to go.</span>
+  {% endif %}
+  {% if recommendation == "normalhigh" %}
+  <span>The wait is a little higher than expected. Maybe wait a little while.</span>
+  {% endif %}
+  {% if recommendation == "recommended" %}
+  <span><strong style = "color:green">GO NOW!</strong> It is experiencing unusually low waits.
+     {% if ride.get_best_times_to_go.remainingdaylow > ride.current_wait %}
+     This is lower than the lowest anticipated wait for the rest of the day.
+     {% else %}
+     If you plan on riding this ride today, this isn't a bad time. Or come back for the lowest anticipated wait time today at {{ride.get_best_times_to_go.remainingday}}
+     {% endif %}
+     </span>
+  {%endif %}
+</p>
 {% endif %}
-{%if  park.get_todays_parks_hours.specialopen != "None" %}
-<h6>Special Ticketed Event Hours: {% fix_time park.get_todays_parks_hours.specialopen%} - {% fix_time park.get_todays_parks_hours.specialclose%}</h4>
 {% endif %}
-<hr style = "width:100%; height : 20px">
+</div>
+{% if ride.todays_waits %}
+<div id = "ride_wait_info" style = "margin-left:0px;margin-top:20px;float:left">
+  <div id = "chart_container"></div>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script>
+    Highcharts.chart('chart_container', {{chart|safe}});
+  </script>
+<hr><h3><strong>Latest Wait Times</strong></h3>
+<table class = "table">
+  <thead class = "thead-dark">
+    <tr>
+      <th>Time</th>
+      <th>Wait (Minutes)</th>
+      <th>Anticipated Wait</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for wait in ride.todays_waits.reverse|slice:":10" %}
+      <tr>
+        <td>{% fix_time wait.time %}</td>
+        <td>{{wait.wait}}</td>
+        <td>{% return_anticipated_wait ride wait.time %}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endif %}
-
-  <div id = "waits" style = "margin-left:10px;margin-top:20px;float:left">
-    <ul id = "waits_list_park" style = "list-style:none; padding-left:0px">
-      <li id = "longest_waits">
-        <h2>Longest Waits</h2>
-        {% for ride in top_waits %}
-          <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
-          <p>{{ride.location}}</p>
-          <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
-          {% recommend_ride ride as recommendation %}
-          {% if recommendation %}
-            {% if recommendation == "No Prediction" %}
-            {% else %}
-            <p>Recommendation:
-
-                {% if recommendation == "avoid" %}
-                <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
-                {% endif %}
-                {% if recommendation == "normal" %}
-                <span><strong>About what you'd expect, go ahead</strong></span>
-                {% endif %}
-                {% if recommendation == "normalhigh" %}
-                <span><strong >A little higher than normal, but not much.</strong></span>
-                {% endif %}
-                {%if recommendation == "normallow" %}
-                <span><strong>A little lower than normal, you should go there</strong></span>
-                {%endif%}
-                {% if recommendation == "recommended" %}
-                <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
-                {%endif %}
+</div>
+<div id = "general_ride_info" class = "container" style = "float:right; margin-top:20px">
+  <h5><em>Opening Date: {{ride.openingdate}}</em></h5>
+  <p>
+    {% if ride.tier == "diversion" %}
+    Ride Tier: Diversion
+    {% endif %}
+    {% if ride.tier == "major_attraction" %}
+    Ride Tier : Major Attraction
+    {% endif %}
+    {% if ride.tier == "minor_attraction" %}
+    Ride Tier: Minor Attraction
+    {% endif %}
+    {% if ride.tier == "headliner" %}
+    Ride Tier: Headliner
+    {% endif %}
+    {% if ride.tier == "super_headliner" %}
+    Ride Tier: Super Headliner
+    {% endif %}
+  </p>
+  <p>Location: {{ride.location}} in {{ride.parkid.name}}</p>
+  <p>Intellectual Property: {{ride.intellectualprop}}</p>
+  {% return_map_url ride.return_location_string ride.name 1 as ride_url %}
+  <img src = {{ride_url.url}}>
+</div>
 
 
-            </p>
-            {% endif %}
-         {% endif %}
-        {% endfor %}
-      </li>
-      <li id = "shortest_waits" style = "margin-top : 40px; ">
-        <h2>Shortest Waits</h2>
-        {% for ride in lowest_waits %}
-          <hr><strong><a href = "{% url 'ride_detail' ride.id %}">{{ride.name}}</a></strong></hr>
-          <p>{{ride.location}}</p>
-          <p>Current Wait Time: <strong>{{ride.current_wait}} Minutes</strong></p>
-          {% recommend_ride ride as recommendation %}
-          {% if recommendation %}
-          <p>Recommendation:
 
-            {% if recommendation == "avoid" %}
-            <span style = "color:red"><strong>Longer Than Predicted, AVOID!</strong></span>
-            {% endif %}
-            {% if recommendation == "normal" %}
-            <span><strong>About what you'd expect, go ahead</strong></span>
-            {% endif %}
-            {% if recommendation == "normalhigh" %}
-            <span><strong >A little higher than normal, but not much.</strong></span>
-            {% endif %}
-            {%if recommendation == "normallow" %}
-            <span><strong>A little lower than normal, you should go there</strong></span>
-            {%endif%}
-            {% if recommendation == "recommended" %}
-            <span style = "color:green"><strong>Shorter Than Predicted, GO NOW!</strong></span>
-            {%endif %}
-
-          </p>
-         {% endif %}
-        {% endfor %}
-      </li>
-    </ul>
-  </div>
-  <div id = "park_general_info" class = "container" style = "">
-
-    <div>
-      {% return_map_url park.name park.displayname as park_url %}
-      <img src = {{park_url.url}}>
-    </div>
-    <div>
-      <hr><h4><strong>Current Weather</strong></h4></hr>
-      <div class="box">
-          <article class="media">
-              <div class="media-left">
-                  <figure class="image is-50x50">
-                      <img src={{weather_url}} alt="Image">
-                  </figure>
-              </div>
-              <div class="media-body">
-                <h5 class = "mt-0">  {{park.displayname}}</h5>
-                <p>{{current_weather.temperature}}° F</p>
-                <p>{{current_weather.status}}</p>
-              </div>
-          </article>
-      </div>
-    </div>
-    <div>
-      <hr><h4><a href = "{% url 'all_attractions_with_waits' park.id %}">All current {{park.displayname}} wait times</a></h4></hr>
-    </div>
-    <div>
-      <hr><h4><a href = "{% url 'other_attraction_list' park.id %}">All Other Attractions</a></h4></hr>
-    </div>
-  </div>
 {% endblock %}

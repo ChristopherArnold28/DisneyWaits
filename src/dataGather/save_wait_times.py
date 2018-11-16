@@ -26,7 +26,10 @@ string = ent_ids.read()
 ent_list = str.splitlines(string)
 entertainment_ids = [x.split(':')[-1] for x in ent_list]
 
-
+exc = open("/home/ec2-user/DisneyWaitTimes/DisneyWaits/src/dataGather/exclude_list.txt", "r")
+string = exc.read()
+exc_list = str.splitlines(string)
+exclude_list = [x.split(':')[-1] for x in exc_list]
 
 for current_id in ids:
     tz = timezone('US/Eastern')
@@ -61,10 +64,39 @@ for current_id in ids:
         elif key in entertainment_ids:
             is_entertainment = True
             #print("this is entertainment")
+        elif key in exclude_list:
+            print("exclude this ride")
+            continue
         else:
             #print("bad_key")
             #print(wait_dict)
-            continue
+            try:
+                Attraction(key)
+                print("Worked as an attraction with key: " + str(key))
+                ### write to the attractions.txt file and move forward
+                current_attraction = Attraction(key)
+                name = current_attraction.getAttractionName()
+                name = name.replace(":"," ")
+                file_string = "\n"+name+":"+str(key)
+                with open("attractionIds.txt","a") as myfile:
+                    myfile.write(file_string)
+                is_attraction = True
+            except:
+                print("not an attraction")
+
+            try:
+                Entertainment(key)
+                print("Worked as an entertainment with key: " + str(key))
+                ###write to the entertainments.txt file and move forward with this key
+                current_entertainment = Entertainment(key)
+                name = current_entertainment.getEntertainmentName()
+                name = name.replace(":"," ")
+                file_string = "\n"+name+":"+str(key)
+                with open("entertainment.txt","a") as myfile:
+                    myfile.write(file_string)
+                is_entertainment = True
+            except:
+                print("not an entertainment")
 
         #print(key)
         #print(wait_dict)
