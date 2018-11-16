@@ -15,7 +15,7 @@ overlooked.
 * SRC:
   This holds the `python` necessary to populate the database and perform analysis
   on the data that has been gathered
-* disneyWaitsApp: This holds the django developed application that can be found at http://chrisrtopher28.pythonanywhere.com/waittimes/
+* disneyWaitsApp: This holds the django developed application that can be found at https://www.liloinline.com/
 
 
 ## Notes on Sources of Data
