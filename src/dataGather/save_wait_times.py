@@ -68,7 +68,8 @@ for current_id in ids:
             print("exclude this ride")
             continue
         else:
-            print("new key")
+            check_sum = 0
+            print("new key: "+ str(key))
             #print(wait_dict)
             try:
                 Attraction(key)
@@ -83,6 +84,7 @@ for current_id in ids:
                 is_attraction = True
             except:
                 print("not an attraction")
+                check_sum = check_sum + 1
 
             try:
                 Entertainment(key)
@@ -97,6 +99,10 @@ for current_id in ids:
                 is_entertainment = True
             except:
                 print("not an entertainment")
+                check_sum = check_sum + 1
+
+            if check_sum == 2:
+                continue
 
         #print(key)
         #print(wait_dict)

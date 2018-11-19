@@ -82,7 +82,7 @@ for user in users_list:
         name = get_name['Name'].iloc[0]
         ride_lat = get_name['Latitude'].iloc[0]
         ride_lng = get_name['Longitude'].iloc[0]
-        waits_query = "select * from DisneyDB.Ride_Waits_Today rwt left join DisneyDB.Ride_Waits_Today_Predicted rwtp on rwt.RideId = rwtp.RideId and LEFT(rwt.Time,4) = LEFT(rwtp.Time,4) where rwt.RideId =" + str(ride)
+        waits_query = "select * from DisneyDB.Ride_Waits_Today rwt left join DisneyDB.Ride_Waits_Today_Predicted rwtp on rwt.RideId = rwtp.RideId and LEFT(rwt.Time,4) = LEFT(rwtp.Time,4) where rwt.RideId =" + str(ride) + " order by rwt.id asc"
         waits = pd.read_sql_query(waits_query, conn)
         current_time = waits.iloc[waits.shape[0]-1]
         if current_time['PredictedWait'] is None:
