@@ -68,7 +68,7 @@ for current_id in ids:
             print("exclude this ride")
             continue
         else:
-            #print("bad_key")
+            print("new key")
             #print(wait_dict)
             try:
                 Attraction(key)
@@ -107,14 +107,14 @@ for current_id in ids:
         #print(ride_table.shape)
         if ride_table.shape[0] < 1:
             if is_attraction:
-                #print("finding an attraction")
+                print("saving a new attraction" + str(key))
                 current_attraction = Attraction(key)
                 name = current_attraction.getAttractionName()
                 #print(name)
                 location = current_attraction.getAncestorLand()
 
             elif is_entertainment:
-                #print("finding an entertainment")
+                print("saving a new entertainment" + str(key))
                 current_entertainment = Entertainment(key)
                 name = current_entertainment.getEntertainmentName()
                 #print(name)
