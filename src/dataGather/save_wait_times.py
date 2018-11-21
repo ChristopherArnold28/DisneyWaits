@@ -79,7 +79,7 @@ for current_id in ids:
                 name = current_attraction.getAttractionName()
                 name = name.replace(":"," ")
                 file_string = "\n"+name+":"+str(key)
-                with open("attractionIds.txt","a") as myfile:
+                with open("/home/ec2-user/DisneyWaitTimes/DisneyWaits/src/dataGather/attractionIds.txt","a") as myfile:
                     myfile.write(file_string)
                 is_attraction = True
             except:
@@ -94,7 +94,7 @@ for current_id in ids:
                 name = current_entertainment.getEntertainmentName()
                 name = name.replace(":"," ")
                 file_string = "\n"+name+":"+str(key)
-                with open("entertainment.txt","a") as myfile:
+                with open("/home/ec2-user/DisneyWaitTimes/DisneyWaits/src/dataGather/entertainment.txt","a") as myfile:
                     myfile.write(file_string)
                 is_entertainment = True
             except:
