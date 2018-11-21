@@ -72,10 +72,10 @@ for current_id in ids:
             print("new key: "+ str(key))
             #print(wait_dict)
             try:
-                Attraction(key)
+                Attraction(str(key))
                 print("Worked as an attraction with key: " + str(key))
                 ### write to the attractions.txt file and move forward
-                current_attraction = Attraction(key)
+                current_attraction = Attraction(str(key))
                 name = current_attraction.getAttractionName()
                 name = name.replace(":"," ")
                 file_string = "\n"+name+":"+str(key)
@@ -87,10 +87,10 @@ for current_id in ids:
                 check_sum = check_sum + 1
 
             try:
-                Entertainment(key)
+                Entertainment(str(key))
                 print("Worked as an entertainment with key: " + str(key))
                 ###write to the entertainments.txt file and move forward with this key
-                current_entertainment = Entertainment(key)
+                current_entertainment = Entertainment(str(key))
                 name = current_entertainment.getEntertainmentName()
                 name = name.replace(":"," ")
                 file_string = "\n"+name+":"+str(key)
@@ -114,14 +114,14 @@ for current_id in ids:
         if ride_table.shape[0] < 1:
             if is_attraction:
                 print("saving a new attraction" + str(key))
-                current_attraction = Attraction(key)
+                current_attraction = Attraction(str(key))
                 name = current_attraction.getAttractionName()
                 #print(name)
                 location = current_attraction.getAncestorLand()
 
             elif is_entertainment:
                 print("saving a new entertainment" + str(key))
-                current_entertainment = Entertainment(key)
+                current_entertainment = Entertainment(str(key))
                 name = current_entertainment.getEntertainmentName()
                 #print(name)
                 location = current_entertainment.getAncestorLand()
