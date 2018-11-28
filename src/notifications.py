@@ -79,26 +79,42 @@ for user in users_list:
             #print("too early for this one")
             continue
 
+
         name = get_name['Name'].iloc[0]
         ride_lat = get_name['Latitude'].iloc[0]
         ride_lng = get_name['Longitude'].iloc[0]
         waits_query = "select * from DisneyDB.Ride_Waits_Today rwt left join DisneyDB.Ride_Waits_Today_Predicted rwtp on rwt.RideId = rwtp.RideId and LEFT(rwt.Time,4) = LEFT(rwtp.Time,4) where rwt.RideId =" + str(ride) + " order by rwt.id asc"
         waits = pd.read_sql_query(waits_query, conn)
         current_time = waits.iloc[waits.shape[0]-1]
-        if current_time['PredictedWait'] is None:
-            continue
-        if current_time['Wait'] < current_time['ConfidenceLow']:
-            message = "Wait for " + name + " Much lower than expected! GO NOW for "+ str(current_time['Wait']) +" minute wait. To navigate now go here: https://www.google.com/maps/dir//" + str(ride_lat) + ","+str(ride_lng) + "/ - Your friendly Disney Waits Notification!"
-            account_sid = config.twilio_account_num
-            auth_token = config.twilio_auth_token
-            client = Client(account_sid, auth_token)
-            client.messages.create(
-              to=str(user_frame['PhoneNumber'].iloc[0]),
-              from_=config.twilio_number,
-              body=message)
-
+        min_wait_option = ride_frame['MinWaitOption'].iloc[0]
+        if min_wait_option is not None:
+            print("min wait entered")
+            if current_time['Wait'] < min_wait_option:
+                message = "Wait for " + name + " is lower than your threshold! GO NOW for "+ str(current_time['Wait']) +" minute wait. To navigate now go here: https://www.google.com/maps/dir//" + str(ride_lat) + ","+str(ride_lng) + "/ - Your friendly Disney Waits Notification!"
+                account_sid = config.twilio_account_num
+                auth_token = config.twilio_auth_token
+                client = Client(account_sid, auth_token)
+                client.messages.create(
+                  to=str(user_frame['PhoneNumber'].iloc[0]),
+                  from_=config.twilio_number,
+                  body=message)
+            else:
+                print(name + " wait is not lower than your threshold")
         else:
-            print(name + " wait is not lower")
+            if current_time['PredictedWait'] is None:
+                continue
+            if current_time['Wait'] < current_time['ConfidenceLow']:
+                message = "Wait for " + name + " Much lower than expected! GO NOW for "+ str(current_time['Wait']) +" minute wait. To navigate now go here: https://www.google.com/maps/dir//" + str(ride_lat) + ","+str(ride_lng) + "/ - Your friendly Disney Waits Notification!"
+                account_sid = config.twilio_account_num
+                auth_token = config.twilio_auth_token
+                client = Client(account_sid, auth_token)
+                client.messages.create(
+                  to=str(user_frame['PhoneNumber'].iloc[0]),
+                  from_=config.twilio_number,
+                  body=message)
+
+            else:
+                print(name + " wait is not lower than predicted")
 # check check to see if the current wait is outside the cofidence interval
 
 # grab current wait time, grab predictions from right now, check how it falls in the confidence interval
